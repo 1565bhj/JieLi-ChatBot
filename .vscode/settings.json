@@ -1,0 +1,14 @@
+{
+    "makefile.makePath": "${workspaceFolder}\\tools\\utils\\make.exe",
+    "makefile.makefilePath": "${workspaceFolder}\\Makefile",
+    "makefile.makeDirectory": "${workspaceFolder}",
+    "makefile.configureOnOpen": false,
+    "files.associations": {
+        "*.S": "asm",
+        "*.cbp": "xml",
+        "*.PIX": "plaintext",
+        "*.TAB": "plaintext",
+        "*.res": "plaintext",
+        "*.sty": "plaintext"
+    }
+}
