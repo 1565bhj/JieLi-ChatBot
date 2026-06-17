@@ -370,7 +370,8 @@ void lvgl_disp_flush(int xs, int xe, int ys, int ye, unsigned char *img)//往显
  */
 void lvgl_test_demo(void)
 {
-    lvgl_main_task_init();//跑lvgl demo，在库里
+    extern int lvgl_handwritten_demo_task_init(void);
+    lvgl_handwritten_demo_task_init();
 }
 
 

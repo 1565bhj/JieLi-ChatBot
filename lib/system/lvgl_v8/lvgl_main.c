@@ -4,7 +4,7 @@
 #include "widgets/lv_label.h"
 #endif
 
-#define QYAI_USE_LVGL_UI_DEMO
+#define QYAI_USE_LVGL_HANDWRITTEN_DEMO
 
 #include "asm/gpio.h"
 #include "lv_conf.h"
@@ -15,8 +15,13 @@
 #include "cJSON_common\cJSON.h"
 #include "app_config.h"
 
+#if defined(QYAI_USE_LVGL_HANDWRITTEN_DEMO)
+#define time_ui_update() ((void)0)
+#endif
+
 // 全局UI对象
 lv_ui guider_ui;
+extern int lvgl_handwritten_demo_init(void);
 
 
 // 电池相关函数声明
@@ -66,7 +71,7 @@ static void system_status_check(void)
 static void lvgl_main_task(void *priv)
 {
     LV_UNUSED(priv);
-    printf("[LVGL] 初始化系统...\n");
+    printf("[LVGL] sys init...\n");
 
     // 初始化LVGL核心组件
     lv_init();
@@ -75,7 +80,10 @@ static void lvgl_main_task(void *priv)
     lv_port_fs_init();
     lv_png_init();
 
-#ifdef QYAI_USE_LVGL_UI_DEMO
+#if defined(QYAI_USE_LVGL_HANDWRITTEN_DEMO)
+    lvgl_handwritten_demo_init();
+    printf("[LVGL] handwritten main loop...\n");
+#elif defined(QYAI_USE_LVGL_UI_DEMO)
     // 初始化UI
     setup_ui(&guider_ui);
     events_init(&guider_ui);
@@ -92,7 +100,7 @@ static void lvgl_main_task(void *priv)
 
     //初始化进度条
     init_screen_set_sliders();
-    printf("[LVGL] 进入主循环...\n");
+    printf("[LVGL] main loop...\n");
 
 #else //LVGL官方DEMO
     lv_demo_widgets();

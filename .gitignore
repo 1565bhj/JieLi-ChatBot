@@ -88,4 +88,4 @@ apps/wifi_tuya_iot/tuya/.vscode/settings.json
 apps/wifi_tuya_iot/tuya/sdk/include/lwip/apps/FILES
 apps/wifi_story_machine/board/wl82/obj
 lib/system/lvgl_v8/prj/obj
-include_lib/driver/format.shcpu/wl82/liba
+skills/

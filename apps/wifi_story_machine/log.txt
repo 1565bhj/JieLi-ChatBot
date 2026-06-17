@@ -1,0 +1,256 @@
+
+[00:00:00.100]========= system reset reason: POWER ON ========[00:00:05.551][Debug]: [USB]get line codling
+[00:00:05.551][Debug]: [USB]dtw rate      : 460800
+[00:00:05.551][Debug]: [USB]stop bits     : 0
+[00:00:05.551][Debug]: [USB]verify bits   : 0
+[00:00:05.551][Debug]: [USB]data bits     : 8
+[00:00:05.552][Debug]: [USB]get line codling
+[00:00:05.552][Debug]: [USB]dtw rate      : 460800
+[00:00:05.552][Debug]: [USB]stop bits     : 0
+[00:00:05.552][Debug]: [USB]verify bits   : 0
+[00:00:05.552][Debug]: [USB]data bits     : 8
+[00:00:05.552][Debug]: [USB]set line coding
+[00:00:05.552][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.552][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.552][Debug]: [USB]stop bits     : 0
+[00:00:05.552][Debug]: [USB]verify bits   : 0
+[00:00:05.552][Debug]: [USB]data bits     : 8
+[00:00:05.553][Debug]: [USB]get line codling
+[00:00:05.553][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.553][Debug]: [USB]stop bits     : 0
+[00:00:05.553][Debug]: [USB]verify bits   : 0
+[00:00:05.553][Debug]: [USB]data bits     : 8
+[00:00:05.553][Debug]: [USB]set control line state - 2
+[00:00:05.553][Debug]: [USB]set line coding
+[00:00:05.553][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.553][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.553][Debug]: [USB]stop bits     : 0
+[00:00:05.553][Debug]: [USB]verify bits   : 0
+[00:00:05.553][Debug]: [USB]data bits     : 8
+[00:00:05.554][Debug]: [USB]get line codling
+[00:00:05.554][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.554][Debug]: [USB]stop bits     : 0
+[00:00:05.554][Debug]: [USB]verify bits   : 0
+[00:00:05.554][Debug]: [USB]data bits     : 8
+[00:00:05.554][Debug]: [USB]get line codling
+[00:00:05.554][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.554][Debug]: [USB]stop bits     : 0
+[00:00:05.554][Debug]: [USB]verify bits   : 0
+[00:00:05.554][Debug]: [USB]data bits     : 8
+[00:00:05.554][Info]: [USB]user setup,3
+[00:00:05.554][Debug]: [USB]get line codling
+[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.555][Debug]: [USB]stop bits     : 0
+[00:00:05.555][Debug]: [USB]verify bits   : 0
+[00:00:05.555][Debug]: [USB]data bits     : 8
+[00:00:05.555][Debug]: [USB]set line coding
+[00:00:05.555][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.555][Debug]: [USB]stop bits     : 0
+[00:00:05.555][Debug]: [USB]verify bits   : 0
+[00:00:05.555][Debug]: [USB]data bits     : 8
+[00:00:05.555][Debug]: [USB]get line codling
+[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.555][Debug]: [USB]stop bits     : 0
+[00:00:05.555][Debug]: [USB]verify bits   : 0
+[00:00:05.555][Debug]: [USB]data bits     : 8
+[00:00:05.556][Debug]: [USB]set control line state - 3
+[00:00:05.556][Debug]: [USB]set line coding
+[00:00:05.556][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.556][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.556][Debug]: [USB]stop bits     : 0
+[00:00:05.556][Debug]: [USB]verify bits   : 0
+[00:00:05.556][Debug]: [USB]data bits     : 8
+[00:00:05.556][Debug]: [USB]get line codling
+[00:00:05.556][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.556][Debug]: [USB]stop bits     : 0
+[00:00:05.556][Debug]: [USB]verify bits   : 0
+[00:00:05.556][Debug]: [USB]data bits     : 8
+[00:00:05.556][Debug]: [USB]set control line state - 3
+[00:00:05.557][Debug]: [USB]get line codling
+[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.557][Debug]: [USB]stop bits     : 0
+[00:00:05.557][Debug]: [USB]verify bits   : 0
+[00:00:05.557][Debug]: [USB]data bits     : 8
+[00:00:05.557][Debug]: [USB]get line codling
+[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.557][Debug]: [USB]stop bits     : 0
+[00:00:05.557][Debug]: [USB]verify bits   : 0
+[00:00:05.557][Debug]: [USB]data bits     : 8
+[00:00:05.557][Debug]: [USB]set line coding
+[00:00:05.557][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.558][Debug]: [USB]stop bits     : 0
+[00:00:05.558][Debug]: [USB]verify bits   : 0
+[00:00:05.558][Debug]: [USB]data bits     : 8
+[00:00:05.558][Debug]: [USB]get line codling
+[00:00:05.558][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.558][Debug]: [USB]stop bits     : 0
+[00:00:05.558][Debug]: [USB]verify bits   : 0
+[00:00:05.558][Debug]: [USB]data bits     : 8
+[00:00:05.558][Debug]: [USB]set control line state - 1
+[00:00:05.558][Debug]: [USB]set line coding
+[00:00:05.558][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
+[00:00:05.558][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.558][Debug]: [USB]stop bits     : 0
+[00:00:05.558][Debug]: [USB]verify bits   : 0
+[00:00:05.559][Debug]: [USB]data bits     : 8
+[00:00:05.559][Debug]: [USB]get line codling
+[00:00:05.559][Debug]: [USB]dtw rate      : 1000000
+[00:00:05.559][Debug]: [USB]stop bits     : 0
+[00:00:05.559][Debug]: [USB]verify bits   : 0
+[00:00:05.559][Debug]: [USB]data bits     : 8
+[00:00:05.580]etharp_raw: sending raw ARP[RSP] packet.
+[00:00:08.050]  . ! mbedtls_ssl_handshake returned err !!! -0x6800
+[00:00:08.050]  . Retry to TLS Handshake ~~~
+[00:00:10.233]WIFI U= 0 KB/s, D= 0 KB/s
+[00:00:10.234][Info]: [HEAP_MEM]DLMALLOC_STATS:
+[00:00:10.234][Info]: [HEAP_MEM]total: 5451520
+[00:00:10.234][Info]: [HEAP_MEM]left: 3662088
+[00:00:12.032]  . 4 Performing the SSL/TLS handshake... ok 
+[00:00:12.032]  . ! The certificate is signed with an unacceptable hash
+[00:00:12.034]ThisBulkSize : 508 
+[00:00:12.156][SEND FIN]
+[00:00:12.161]mqtt_example ...
+[00:00:12.161]net_event=2, mode_type=0, net_ch=0
+[00:00:12.161]NET_EVENT_CONNECTED : 3 
+[00:00:12.161]vad_enable = 0
+[00:00:12.161][Info]: [OS]threat_create:mqtt_task,pid:0x0
+[00:00:12.162]net_connected_check ok, __this->net_connect_succ:2
+[00:00:12.162][Info]: [OS]kill for:net_check succ
+[00:00:12.164]music_play_file : mnt/sdfile/app/aupackres/tone/WifiConSucc.mp3
+[00:00:12.164][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:12.165][Info]: [AUDIO_SERVER]audio_dec_open
+[00:00:12.165][Info]: [AUDIO_SERVER]audo decoder try open : mp3
+[00:00:12.165][Info]: [AUDIO_DECODER]===== mp3_decoder_open =====
+[00:00:12.165][Info]: [AUDIO_DECODER]dcbuf_size = 16080
+[00:00:12.165][Info]: [AUDIO_DECODER]__mp3_get_lslen..: 7293
+[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.sr = 24000
+[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.br = 64
+[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.nch = 1
+[00:00:12.166][Info]: [AUDIO_DECODER]mp3 info.total_time = 1
+[00:00:12.166][Info]: [AUDIO_SERVER]audio_dev_set_fmt: suss  0  
+[00:00:12.166]file_name: mqtt.bin
+[00:00:12.166][Info]: [OS]threat_create:mp3_2,pid:0x43f2670
+[00:00:12.166][Info]: [AUDIO_SERVER]audio_dec_start: suss
+[00:00:12.166][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:12.167][Info]: [AUDIO_SERVER]audio_dec_start
+[00:00:12.167][Info]: [AUDIO_SERVER]dec list sample_rate : 24000, src : 0
+[00:00:12.167]->mqtt read info : 
+{
+  "server_port":8883,
+  "client_ID":"qyai",
+  "address":"paa2f258.ala.cn-shenzhen.emqxsl.cn",
+  "username":"ChatBot",
+  "password":"123456",
+  "ProductKey":"",
+  "DeviceName":"AABBCCDDEEFF-TEST",
+  "DeviceSecret":"",
+  "QRCode_URL":""
+}
+[00:00:12.167]---> read flash mqtt info : 8883, qyai , paa2f258.ala.cn-shenzhen.emqxsl.cn , ChatBot , 123456
+[00:00:12.167]---> MQTT connet ...
+[00:00:12.167]udp_bind: bound to 
+[00:00:12.167]0.0.0.0
+[00:00:12.167], port 31059)
+[00:00:12.190][Info]: [AUDIO_DEV]dac_streamon: sample_rate = 24000 volume = 42
+[00:00:12.190][Info]: [AUDIO_DAC]dac sample rate 24000
+[00:00:12.190][Info]: [AUDIO_DAC]sr = 6
+[00:00:12.220]music_play_file: ok
+[00:00:12.220][Info]: [OS]threat_create:wifi_pcm_stream,pid:0x0
+[00:00:12.220][Info]: [OS]threat_create:aiui_net_task,pid:0x42937d8
+[00:00:12.221]ifly_aiui_net_task, start...
+[00:00:12.221]attention: use default product uuid!!!
+[00:00:12.221]-> bt_ble_get_mac
+FF EE DD CC BB AA 
+[00:00:12.221]udp_bind: bound to 
+[00:00:12.221]0.0.0.0
+[00:00:12.221], port 58544)
+[00:00:12.222]udp_bind: bound to 
+[00:00:12.222]0.0.0.0
+[00:00:12.222], port 51944)
+[00:00:12.222]udp_bind: bound to 
+[00:00:12.222]0.0.0.0
+[00:00:12.222], port 51945)
+[00:00:12.521][RECV FIN]
+[00:00:12.931]MqttLinux socket use TLS1.2
+[00:00:12.932]LOAD  CA
+[00:00:12.933]  . Connecting to tcp/paa2f258.ala.cn-shenzhen.emqxsl.cn/8883...
+[00:00:13.111]->play_time: 1
+[00:00:13.277][Info]: [AUDIO_DECODER]__mp3_input read rlen= 80, len= 512
+[00:00:13.277][Info]: [AUDIO_DECODER]__mp3_input read rlen= 0, len= 512
+[00:00:13.277][Info]: [AUDIO_SERVER]audio_dec_wait_stop
+[00:00:13.343][Info]: [AUDIO_SERVER]audio dec end
+[00:00:13.343][Info]: [OS]kill for:mp3_2 succ
+[00:00:13.344]->local_music: AUDIO_SERVER_EVENT_END
+[00:00:13.344][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:13.344][Info]: [AUDIO_SERVER]audio_dec_stop
+[00:00:13.344][Info]: [AUDIO_SERVER]audio_dec_pause
+[00:00:13.401][Info]: [AUDIO_DECODER]===== mp3_decoder_close =====
+[00:00:13.402]vad_enable = 1
+[00:00:14.056][RECV FIN]
+[00:00:14.057][SEND RST]
+[00:00:14.492]2026:06:17   02:27:19 
+
+[00:00:14.500]get_NTP_time: 2026-6-17 10:27:19
+[00:00:14.500]-> setting no alarm 
+[00:00:14.500]-> bt_ble_get_mac
+FF EE DD CC BB AA 
+[00:00:14.500]attention: use default product uuid!!!
+[00:00:14.500]body_dat: 
+{"mac":"AABBCCDDEEFF-8FXdSDVy-B1N1-TestBox","alarm":[]}
+[00:00:14.503]  . 1 mbedtls init ... ok 
+[00:00:14.503]udp_bind: bound to 
+[00:00:14.503]0.0.0.0
+[00:00:14.503], port 8389)
+[00:00:15.234]WIFI U= 4 KB/s, D= 0 KB/s
+[00:00:15.234][Info]: [HEAP_MEM]DLMALLOC_STATS:
+[00:00:15.234][Info]: [HEAP_MEM]total: 5451520
+[00:00:15.234][Info]: [HEAP_MEM]left: 3446408
+[00:00:15.363][RECV SYN]
+[00:00:15.364][1;35m[DEBUG][aiui_socket ##137]connect success[0m
+[00:00:15.571]  . 2 Loading the CA root certificate ... ok 
+[00:00:16.369][RECV SYN]
+[00:00:16.379][RECV SYN]
+[00:00:18.140]-> bt_ble_get_mac
+FF EE DD CC BB AA 
+[00:00:18.140]attention: use default product uuid!!!
+[00:00:18.140]-> OTA : 8FXdSDVy-B1N1-TestBox-V1
+[00:00:18.520][RECV RST]
+[00:00:20.234]WIFI U= 0 KB/s, D= 0 KB/s
+[00:00:20.235][Info]: [HEAP_MEM]DLMALLOC_STATS:
+[00:00:20.235][Info]: [HEAP_MEM]total: 5451520
+[00:00:20.235][Info]: [HEAP_MEM]left: 3395976
+[00:00:20.320][SEND FIN]
+[00:00:20.331]ConnectNetwork err : -1
+[00:00:20.331][Info]: [OS]kill for:mqtt_task succ
+[00:00:20.360][SEND FIN]
+[00:00:20.370][1;35m[DEBUG][aiui_convert ##57]parse active failed, can not find header[0m
+[00:00:20.370]audio active success
+[00:00:20.371][Info]: [OS]threat_create:aiui_ntp_task,pid:0x42937e8
+[00:00:20.371]time = 1781663244
+[00:00:20.371]IFLY_AIUI_NTP_TIME, ifly_ntp_time_status= 1, gv_ifly_aiui_get_ntp_time_retry=0
+[00:00:20.371]udp_bind: bound to 
+[00:00:20.371]0.0.0.0
+[00:00:20.371], port 51946)
+[00:00:20.546][RECV RST]
+[00:00:21.787]2026:06:17   02:27:27 
+
+[00:00:21.790]set_sys_time : 2026-6-17,10:27:27
+[00:00:21.790]net_event=12, mode_type=0, net_ch=0
+[00:00:22.549][RECV SYN]
+[00:00:22.743][RECV SYN]
+[00:00:22.744]  . 3 Setting up the SSL/TLS structure... ok
+[00:00:22.790]IFLY_AIUI_NTP_TIME, ifly_ntp_time_status= 0, gv_ifly_aiui_get_ntp_time_retry=1
+[00:00:22.790]IFLY_AIUI_CONNECT_SERVER_MSG, vl_connect_status=0
+[00:00:22.790][Info]: [OS]kill for:aiui_ntp_task succ
+[00:00:22.791]ifly_aiui_websockets_connect, websocket_valid=0, recv_thread_id=0x0
+[00:00:22.791]  . ! Client websocket init error !!!
+[00:00:22.799][RECV SYN]
+[00:00:22.995][RECV SYN]
+[00:00:23.207][RECV SYN]
+[00:00:23.401][RECV SYN]
+[00:00:25.235]WIFI U= 0 KB/s, D= 2 KB/s
+[00:00:25.235][Info]: [HEAP_MEM]DLMALLOC_STATS:
+[00:00:25.235][Info]: [HEAP_MEM]total: 5451520
+[00:00:25.235][Info]: [HEAP_MEM]left: 3368584

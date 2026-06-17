@@ -252,8 +252,8 @@
 
 //#define USE_LCD_TE_ROTATE_ENABLE            1 //开启TE使用时播放视频翻转视频数据
 
-//#define CONFIG_LVGL_UI_ENABLE
-#define CONFIG_UI_PLAY_EMOJI                        //开启眼睛表情显示
+#define CONFIG_LVGL_UI_ENABLE
+// #define CONFIG_UI_PLAY_EMOJI                        //开启眼睛表情显示
 
 #ifdef CONFIG_UI_PLAY_EMOJI
 //#define CONFIG_UI_TOW_EYE                           //开2个眼睛显示

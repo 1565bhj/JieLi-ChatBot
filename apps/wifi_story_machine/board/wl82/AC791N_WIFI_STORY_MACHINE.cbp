@@ -1568,6 +1568,9 @@
 		<Unit filename="../../ui/logo.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../ui/lvgl_handwritten_demo.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../../ui/lvgl_ui_sysdep.c">
 			<Option compilerVar="CC" />
 		</Unit>

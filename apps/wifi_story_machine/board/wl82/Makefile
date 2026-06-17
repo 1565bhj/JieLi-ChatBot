@@ -379,6 +379,7 @@ c_SRC_FILES := \
 	../../../../apps/wifi_story_machine/bt_ble/bt_music.c \
 	../../../../apps/wifi_story_machine/multiple_ethernetif.c \
 	../../../../apps/wifi_story_machine/ui/led_ui_gr202.c \
+	../../../../apps/wifi_story_machine/ui/lvgl_handwritten_demo.c \
 	../../../../apps/wifi_story_machine/video/camera_lcd_demo.c \
 	../../../../apps/wifi_story_machine/video/get_yuv_data.c \
 	../../../../apps/wifi_story_machine/video/jpeg2yuv.c \

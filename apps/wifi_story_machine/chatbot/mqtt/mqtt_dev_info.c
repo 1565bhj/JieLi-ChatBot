@@ -51,11 +51,12 @@ static int mqtt_dev_info_file_read(char *buf, int buf_len)
         char name[32];
         fget_name(f, name, sizeof(name));
         printf("file_name: %s\n", name);
-        int len = fread(buf, 1, buf_len, f);
+        int len = fread(buf, 1, buf_len - 1, f);
         if (len > 0) {
+            buf[len] = '\0';
             ret = strlen(buf);
             ret = ret > buf_len ? len : ret;
-            mqtt_dev_info_dec(buf, ret);
+            //mqtt_dev_info_dec(buf, ret);
             //put_buf(buf, len);
             return ret;
         }
@@ -117,10 +118,10 @@ int mqtt_dev_info_flash_read(int *server_port,
                 free(buf);
                 return -1;
             }
-            printf("->mqtt read info : \n%s\n", buf);
+            printf("->mqtt read info : \n%s\n", json_object_to_json_string_ext(new_obj, JSON_C_TO_STRING_PRETTY));
             parm = json_object_object_get(new_obj, Serverport);
             if (parm) {
-                Serverport_val = json_object_get_string(parm);
+                Serverport_val = json_object_get_int(parm);
             }
             parm = json_object_object_get(new_obj, Client_ID);
             if (parm) {
