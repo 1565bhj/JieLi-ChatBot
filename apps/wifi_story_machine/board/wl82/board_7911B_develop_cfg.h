@@ -74,7 +74,7 @@
 //#define CONFIG_UI_PLAY_EMOJI                        //开启眼睛表情显示
 
 #ifdef CONFIG_UI_PLAY_EMOJI
-//#define CONFIG_UI_TOW_EYE                           //开2个眼睛显示
+#define CONFIG_UI_TOW_EYE                           //开2个眼睛显示
 //#define CONFIG_UI_GIF_EYE                           //开启GIF眼睛显示
 #define CONFIG_UI_AVI_EYE                           //开启AVI眼睛显示
 #ifdef CONFIG_UI_TOW_EYE
@@ -85,8 +85,8 @@
 //#define CONFIG_GSENSOR_ENABLE //加速度传感器
 //#define CONFIG_SC7A20H_GSENSOR_ENABLE           //SC7A20H加速度传感器
 
-//#define CONFIG_GSENSOR_ENABLE               1 //加速度传感器
-//#define CONFIG_SC7A20H_GSENSOR_ENABLE       1   //SC7A20H加速度传感器
+// #define CONFIG_GSENSOR_ENABLE               1 //加速度传感器
+// #define CONFIG_SC7A20H_GSENSOR_ENABLE       1   //SC7A20H加速度传感器
 
 // 宏定义是否使能LVGL游戏
 //#define CONFIG_LVGL_GAMES_ENABLE            1
@@ -132,8 +132,15 @@
 #define SPEECH_ENERGY_MIN                   (84)   //语音检测最小值能量值
 #define DIGITAL_VOL_AGC                     0      //AEC后的音频数字增益
 
-#define TCFG_DEBUG_PORT                     IO_PORTA_07 //打印调试IO
-#define TCFG_VCC33_CTRL_PORT                IO_PORTA_10 //3.3V电原控制IO
+// #define TCFG_SERVO_ENABLE
+#ifdef TCFG_SERVO_ENABLE
+#define SERVO_PWM_PORT                      IO_PORTB_00
+#define SERVO_PWM_CH                        IO_PORTB_01
+#endif
+
+
+#define TCFG_DEBUG_PORT                     IO_PORTA_06 //打印调试IO
+#define TCFG_VCC33_CTRL_PORT                IO_PORTA_07 //3.3V电原控制IO
 #define TCFG_IOVDD_CTRL_PORT                IO_PORTA_00 //VDDIO电原控制IO
 
 //#define TCFG_FIRST_POWER_OFF_EN                 //第一次上电开机需要关机
@@ -155,7 +162,7 @@
 #define TCFG_AUTO_SLEEP_CHECK_EN            1           //使能特定时间待机检测空闲后进入关机
 #define TCFG_AUTO_SLEEP_CHECK_ONLY_SPEECH   1           //使能只检测语音对话作为是否空闲
 #define TCFG_AUTO_DEV_LOW_PWER_TIME_SEC     30          //使能30秒进入外设低功耗(未关机，只是把耗电外设降低功耗)
-//#define AUTO_SLEEP_TIME_MIN                 5           //5分钟自动关机
+#define AUTO_SLEEP_TIME_MIN                 10          //10分钟自动关机
 
 #define TCFG_VBAT_CHECK_EN                  0           	//使能电量检测
 //#define TCFG_VBAT_CHECK_AD_PORT             IO_PORTA_10	//AD IO检测VBAT电池电量IO
@@ -167,7 +174,7 @@
 #define TCFG_LED_STATUES_NORMAL_BLINK       1           //LED的IO:正常状态闪烁
 #endif
 
-#define TCFG_LED_PWM0_PORT                  IO_PORTH_06 //PWM0的IO-LED背景灯
+//#define TCFG_LED_PWM0_PORT                  IO_PORTH_06 //PWM0的IO-LED背景灯
 #define TCFG_LED_PWM0_EYE_EN                1           //开启LED对话眨眼（可以开灯也可以唤醒闪烁）
 //#define TCFG_LED_PWMCH_PORT                 PWMCH1_L    //LED背景灯的PWMCH通道
 
@@ -202,9 +209,9 @@
 //#define CONFIG_PRESS_LONG_KEY_POWERON                   //长按开关
 
 
-#define TCFG_DAC_MUTE_PORT                  IO_PORTA_09 //功放静音IO
-#define TCFG_DAC_MUTE_VALUE                 1           //功放静音IO电平值
-#define TCFG_DAC_AUTO_MUTE_ENABLE           1
+#define TCFG_DAC_MUTE_PORT                  IO_PORTH_06 //功放静音IO
+#define TCFG_DAC_MUTE_VALUE                 0           //功放静音IO电平值
+#define TCFG_DAC_AUTO_MUTE_ENABLE           0
 
 #define TCFG_DAC_DIFF_OUT_ENABLE            0
 #define TCFG_DAC_HW_CHANNEL_BIT             BIT(0)//|BIT(1)|BIT(2)|BIT(3)   //BIT(0):DACFL、 BIT(1):DACFR、 BIT(2):DACRL、 BIT(3):DACRR
@@ -254,9 +261,9 @@
 #define MIC1                               2   //mic1通道
 #define MIC2_AEC                           0   //回采AEC回声消除通道
 
-#define TCFG_MIC_CHANNEL_NUM                2
-#define TCFG_LINEIN_CHANNEL_MAP             -1//LADC_CH_AUX0 | LADC_CH_AUX2
-#define TCFG_LINEIN_CHANNEL_NUM             0
+#define TCFG_MIC_CHANNEL_NUM               2
+#define TCFG_LINEIN_CHANNEL_MAP           -1 //LADC_CH_AUX0 | LADC_CH_AUX2
+#define TCFG_LINEIN_CHANNEL_NUM            0
 #endif
 
 #define CONFIG_ASR_CLOUD_ADC_CHANNEL        MIC0        //云端识别mic通道

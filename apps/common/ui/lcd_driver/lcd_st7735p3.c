@@ -27,15 +27,15 @@ void ST7735P3_SetRange(u16 xs, u16 xe, u16 ys, u16 ye)
 void ST7735P3_SetRange_1(u16 xs, u16 xe, u16 ys, u16 ye)
 {
     WriteCOM(0x2A);
-    WriteDAT_8(ys >> 8);
-    WriteDAT_8(ys);
-    WriteDAT_8(ye >> 8);
-    WriteDAT_8(ye);
-    WriteCOM(0x2B);
     WriteDAT_8(xs >> 8);
     WriteDAT_8(xs);
     WriteDAT_8(xe >> 8);
     WriteDAT_8(xe);
+    WriteCOM(0x2B);
+    WriteDAT_8(ys >> 8);
+    WriteDAT_8(ys);
+    WriteDAT_8(ye >> 8);
+    WriteDAT_8(ye);
 
 }
 static void ST7735P3_lvgl_Fill(u16 xs, u16 xe, u16 ys, u16 ye, u8 *img)
@@ -59,6 +59,7 @@ static void ST7735P3_lvgl_Fill(u16 xs, u16 xe, u16 ys, u16 ye, u8 *img)
 void ST7735P3_clear_screen(u32 color)
 {
     lcd_interface_non_block_wait();
+    ST7735P3_SetRange_1(LCD_X_OFFSET, LCD_W - 1, LCD_Y_OFFSET, LCD_H - 1);
     WriteCOM(0x2c);
 
     u8 *buf = malloc(LCD_W * LCD_H * 2);
@@ -77,6 +78,7 @@ void ST7735P3_clear_screen(u32 color)
 void ST7735P3_Fill(u8 *img, u16 len)
 {
     lcd_interface_non_block_wait();
+    ST7735P3_SetRange_1(LCD_X_OFFSET, LCD_W - 1 + LCD_X_OFFSET, LCD_Y_OFFSET, LCD_H - 1 + LCD_Y_OFFSET);
     WriteCOM(0x2c);
     WriteDAT_DMA(img, len);
 }
@@ -317,6 +319,7 @@ static int ST7735P3_init(void)
     ST7735P3_reset();
     ST7735P3_init_code();
     ST7735P3_set_direction(ROTATE_DEGREE_0);
+    ST7735P3_SetRange_1(LCD_X_OFFSET, LCD_W - 1 + LCD_X_OFFSET, LCD_Y_OFFSET, LCD_H - 1 + LCD_Y_OFFSET);
 #if USE_LCD_TE
     lcd_te_interrupt_init(1);
 #endif

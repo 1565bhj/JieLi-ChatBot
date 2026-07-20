@@ -115,7 +115,7 @@ extern u8 is_in_config_network_state(void);
 // Complete Local Name  默认的蓝牙名字
 extern const char *bt_get_local_name();
 
-//配网成回复命令
+//配网成功回复命令
 static const u8 rsp_cmd0[] = {
     0x4A, 0x4C, 0x00, 0x0e, 0x10, 0x02,
     '{', '"', 's', 't', 'a', 't', 'u', 's', '"', ':', '0', '}',
@@ -563,8 +563,9 @@ static void check_net_info_if_recv_complete(void)
     if (user_buf[user_buf_offset - 1] == 0xFF && user_buf_offset == user_data_size + 7) {
         user_buf[sizeof(user_buf) - 1] = 0;
         u16 crc16 = user_buf[user_buf_offset - 2] + (user_buf[user_buf_offset - 3] << 8);
+        u16 calc_crc16 = CRC16(&user_buf[2], user_data_size + 2);
         put_buf(&user_buf[2], user_data_size + 2);
-        if (crc16 == CRC16(&user_buf[2], user_data_size + 2)) {
+        if (crc16 == calc_crc16) {
             //去掉2byte crc 1byte 结束符
             user_buf[user_buf_offset - 3] = 0;
             if (0 == bt_net_config_set_ssid_pwd((const char *)&user_buf[6])) {

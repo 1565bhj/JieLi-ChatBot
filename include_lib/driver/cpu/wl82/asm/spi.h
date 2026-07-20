@@ -251,7 +251,7 @@ struct sfc_spi_data {
         { \
             .cs_pin     = -1, \
             .di_pin     = IO_PORTH_02, \
-            .do_pin     = IO_PORTH_01, \
+            /*.do_pin     = IO_PORTH_01,*/ \
             .clk_pin    = IO_PORTH_00, \
             .d2_pin     = -1, \
             .d3_pin     = -1, \

@@ -4,8 +4,12 @@
 #include "asm/irflt.h"
 #include "event/key_event.h"
 #include "app_config.h"
+#include "os/os_api.h"
+#include "audio/music_play.h"
 
 #if TCFG_IRKEY_ENABLE
+
+#define IRKEY_TOUCH_DEBOUNCE_MS      500
 
 //按键驱动扫描参数列表
 struct key_driver_para irkey_scan_para = {
@@ -28,6 +32,39 @@ static const u8 IRTabFF00[] = {
     NKEY_50, NKEY_51, IR_19, NKEY_53, NKEY_54, NKEY_55, NKEY_56, NKEY_57, NKEY_58, NKEY_59, IR_17, NKEY_5B, NKEY_5C, NKEY_5D, IR_14, NKEY_5F,
 };
 
+static void irkey_evt_task(void *priv)
+{
+    int msg[8];
+    int err;
+
+    while (1) {
+        err = os_taskq_pend("taskq", msg, ARRAY_SIZE(msg));
+        if (err != OS_TASKQ || msg[0] != Q_USER) {
+            continue;
+        }
+
+        switch (msg[1]) {
+        case 16:
+            // 处理触摸1
+            music_play_res_file("head.mp3");
+            break;
+        case 64:
+            // 处理触摸2
+            music_play_res_file("lface.mp3");
+            break;
+        case 32:
+            // 处理触摸3
+            music_play_res_file("rface.mp3");
+            break;
+        case 48:
+            // 处理触摸4
+            music_play_res_file("chin.mp3");
+            break;
+        }
+    }
+}
+
+
 /*----------------------------------------------------------------------------*/
 /**@brief   获取ir按键值
    @param   void
@@ -39,55 +76,49 @@ static const u8 IRTabFF00[] = {
 u8 ir_get_key_value(void)
 {
     u8 tkey = 0xff;
+    int msg[2];
+    static u8 last_tkey = 0xff;
+    static u32 last_ms = 0;
+    u32 now = timer_get_ms();
+
     tkey = get_irflt_value();
     if (tkey == 0xff) {
         return tkey;
     }
-//    printf("-> tkey = %d \n",tkey);
-//    tkey = IRTabFF00[tkey];
-    /*
-    index =
-    69：开关
-    70：mode
-    7：eq
-    71:静音
-    9：vol+音量加
-    21：vol-音量减
-    67：下一首
-    64：上一首
-    68：暂停
-    13：U/SD U盘和SD卡播放模式
-    25：RPT
-    */
-    switch (tkey) {
-    case 9:
-        tkey = KEY_VOLUME_INC;
-        break;//音量+
-    case 21:
-        tkey = KEY_VOLUME_DEC;
-        break;//音量-
-    case 67:
-        tkey = KEY_DOWN;
-        break;//下一首
-    case 64:
-        tkey = KEY_UP;
-        break;//上一首
-    case 69:
-        tkey = KEY_POWER;
-        break;//开/关机
-    case 70:
-        tkey = KEY_MODE;
-        break;//模式
-    case 71:
-        tkey = KEY_MUTE;
-        break;//静音
-    case 68:
-        tkey = KEY_OK;
-        break;//暂停/播放
-    default:
-        tkey = NO_KEY;
-        break;
+
+    msg[0] = tkey;   // 比如 0x10 / 0x20 / 0x30 / 0x40
+    if(tkey == 16 || tkey == 64 || tkey == 32 || tkey == 48) {
+        if (tkey == last_tkey && now - last_ms < IRKEY_TOUCH_DEBOUNCE_MS) {
+            return NO_KEY;
+        }
+        int ret = os_taskq_post_type("irkey_evt_task", Q_USER, 1, msg);
+        if(ret != OS_NO_ERR) {
+            printf("os_taskq_post_type failed, ret: %d\n", ret);
+            return NO_KEY;
+        }
+        last_tkey = tkey;
+        last_ms = now;
+        return NO_KEY;
     }
+
+    // switch (tkey) {
+    // case 16: //0x10
+    //     tkey = KEY_IR0;
+    //     break;
+    // case 64: //0x40
+    //     tkey = KEY_IR1;
+    //     break;
+    // case 32: //0x20
+    //     tkey = KEY_IR2;
+    //     break;
+    // case 48: //0x30
+    //     tkey = KEY_IR3;
+    //     break;
+    // default:
+    //     tkey = NO_KEY;
+    //     break;
+    // }
+
     return tkey;
 }
 
@@ -101,6 +132,8 @@ u8 ir_get_key_value(void)
 /*----------------------------------------------------------------------------*/
 int irkey_init(const struct irkey_platform_data *irkey_data)
 {
+    static u8 is_irkey_task_created = 0;
+
     ir_input_io_sel(irkey_data->port);
 
     ir_output_timer_sel();
@@ -109,8 +142,17 @@ int irkey_init(const struct irkey_platform_data *irkey_data)
 
     ir_timeout_set();
 
+    if (!is_irkey_task_created) {
+        int err = thread_fork("irkey_evt_task", 20, 1024, 128, NULL, irkey_evt_task, NULL);
+        if (err == OS_NO_ERR) {
+            is_irkey_task_created = 1;
+            printf("irkey_evt_task created successfully!\n");
+        } else {
+            printf("irkey_evt_task create failed, err: %d\n", err);
+        }
+    }
+
     return 0;
 }
 
 #endif
-

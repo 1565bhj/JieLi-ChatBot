@@ -95,7 +95,7 @@ static void timer_ir_isr(void)
         ir_code.wUserCode = ir_code.wData;
     }
     if (ir_code.bState == 32) {
-        /* printf("[0x%X]",ir_code.wData); */
+        printf("[irflt]:0x%X",ir_code.wData);
     }
 }
 

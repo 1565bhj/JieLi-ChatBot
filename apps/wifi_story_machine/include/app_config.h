@@ -100,7 +100,7 @@
 #endif
 
 #ifndef TCFG_IRKEY_ENABLE
-#define TCFG_IRKEY_ENABLE             0         //红外遥控按键
+#define TCFG_IRKEY_ENABLE             1         //红外遥控按键
 #endif
 
 #ifndef TCFG_RDEC_KEY_ENABLE
@@ -129,6 +129,7 @@
 #ifdef CONFIG_RELEASE_ENABLE
 // #define CONFIG_EXCEPTION_AUTO_FIX_ENABLE     //异常自动增大电源档位配置和降频
 #endif
+// #define SERVO_PWM_TEST   
 // #define CONFIG_SAVE_EXCEPTION_LOG_IN_FLASH   //保存异常打印信息到flash
 // #define MEM_LEAK_CHECK_ENABLE                //是否启用内存泄漏检查(需要包含mem_leak_test.h头文件)
 // #define CONFIG_AUTO_SHUTDOWN_ENABLE          //自动倒数关机
@@ -539,17 +540,6 @@
 //*********************************************************************************//
 //                                  USB配置                                        //
 //*********************************************************************************//
-#define TCFG_USB_SLAVE_ENABLE       1           // 必须开USB从机
-#define TCFG_PC_ENABLE              1           // 必须开PC模式
-#define TCFG_UDISK_ENABLE           0           // 必须关U盘
-#define TCFG_VIR_UDISK_ENABLE       0           // 必须关虚拟U盘
-
-#define CONFIG_USB_DOWNLOAD_MODE    0           // 必须关!否则不出COM
-#define USB_DEVICE_CLASS_CONFIG     CDC_CLASS   // USB = 虚拟串口
-#define CONFIG_USB_DEBUG_ENABLE     1           // USB 打印 LOG
-#define CONFIG_DEBUG_ENABLE         1           // 调试总开关
-#define TCFG_DB_UART_ENABLE         1           // 打印口使能
-
 #ifndef TCFG_PC_ENABLE
 #if TCFG_EQ_ONLINE_ENABLE && defined EQ_CORE_V1
 #define TCFG_PC_ENABLE                      1     //使用USB从机功能一定要打开
@@ -833,8 +823,8 @@
 
 #define TCFG_LCD_ST7789P3_ENABLE            0 //1.5寸手表屏幕
 #define TCFG_LCD_ST77912_ENABLE             0 //1.28寸手表屏幕
-#define TCFG_LCD_GC9D01_ENABLE              0 //0.71寸手表屏幕
-#define TCFG_LCD_ST7735P3_ENABLE            1 //1.77寸160*128屏幕
+#define TCFG_LCD_GC9D01_ENABLE              1 //0.71寸手表屏幕
+#define TCFG_LCD_ST7735P3_ENABLE            0 //1.77寸160*128屏幕
 #define TCFG_LCD_NV3031A_ENABLE             0 //2.8寸320*240屏幕
 #define TCFG_LCD_AXS15252_ENABLE            0 //AXS15252 320*240 SPI 屏
 #endif

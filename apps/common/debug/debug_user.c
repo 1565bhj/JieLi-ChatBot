@@ -5,7 +5,7 @@
 //#define CONFIG_USER_DEBUG_ENABLE  //开启user_printf
 //#define CONFIG_SDCARD_DEBUG_ENABLE  //开关SD卡记录打印信息
 //#define CONFIG_NETWORK_DEBUG_ENABLE //可以触发打印信息上传到服务器端
-#define CONFIG_USB_DEBUG_ENABLE     //开关USB虚拟串口打印信息
+//#define CONFIG_USB_DEBUG_ENABLE     //开关USB虚拟串口打印信息
 
 
 #if (defined CONFIG_DEBUG_ENABLE && defined CONFIG_NETWORK_DEBUG_ENABLE)

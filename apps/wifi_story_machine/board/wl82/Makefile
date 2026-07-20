@@ -102,17 +102,16 @@ DEFINES := \
 	-DCONFIG_FREE_RTOS_ENABLE \
 	-DCONFIG_THREAD_ENABLE \
 	-DCONFIG_AUDIO_ONCHIP \
+	-DCONFIG_WIFI_ENABLE \
 	-D__GCC_PI32V2__ \
 	-DCONFIG_NEW_ECC_ENABLE \
 	-DCONFIG_EQ_SUPPORT_ASYNC \
 	-DEQ_CORE_V1 \
 	-DCONFIG_VIDEO_DEC_EN \
 	-DCONFIG_VIDEO_OSD_EN \
-	-DCONFIG_SFC_ENABLE \
 	-DCONFIG_AUDIO_ENABLE \
 	-DCONFIG_JLFAT_ENABLE \
 	-DCONFIG_RTOS_AND_MM_LIB_CODE_SECTION_IN_SDRAM \
-	-DCONFIG_VIDEO_ENABLE=1 \
 	-DCONFIG_NET_ENABLE=1 \
 	-DCONFIG_BT_ENABLE=1 \
 	-DEVENT_HANDLER_NUM_CONFIG=2 \
@@ -199,6 +198,27 @@ INCLUDES := \
 	-I../../../../apps/common/ble/include \
 	-I../../../../include_lib/utils/btmesh \
 	-I../../../../include_lib/utils/btmesh/adaptation \
+	-I../../chatbot/websocket \
+	-I../../../../include_lib/net/web_socket \
+	-I../../chatbot/vad \
+	-I../../../../include_lib/net/cJSON_common \
+	-I../../iflytek/aiui/include \
+	-I../../iflytek/aiui/include_iflytek \
+	-I../../iflytek/asr \
+	-I../../../../include_lib/system/sxy_qyai \
+	-I../../../../include_lib/system/sxy_qyai/signal_processing \
+	-I../../../../include_lib/system/sxy_qyai/vad \
+	-I../../../../include_lib/net/http_chunck_stream \
+	-I../../yunzs \
+	-I../../yunzs/include \
+	-I../../yunzs/app \
+	-I../../../../include_lib/newlib/include/nnom/inc/layers \
+	-I../../../../include_lib/newlib/include/nnom/inc \
+	-I../../../../include_lib/newlib/include/nnom/port \
+	-I../../qyai/tinymaix \
+	-I../../../common/jl_math \
+	-I../../../../lib/system/lvgl_v8/src/core \
+	-I../../../common/gsensor \
 
 
 # 需要编译的 .c 文件
@@ -284,6 +304,7 @@ c_SRC_FILES := \
 	../../../../apps/common/jl_math/flfft_core_pi32v2.c \
 	../../../../apps/common/jl_math/jl_fft.c \
 	../../../../apps/common/jl_math/jl_math.c \
+	../../../../apps/common/jl_math/kiss_fft.c \
 	../../../../apps/common/jl_math/nn_function_vec.c \
 	../../../../apps/common/key/adkey.c \
 	../../../../apps/common/key/adkey_rtcvdd.c \
@@ -327,11 +348,20 @@ c_SRC_FILES := \
 	../../../../apps/common/ui/lcd_driver/lcd_ili9341.c \
 	../../../../apps/common/ui/lcd_driver/lcd_ili9481.c \
 	../../../../apps/common/ui/lcd_driver/lcd_ili9488.c \
+	../../../../apps/common/ui/lcd_driver/lcd_gc3907.c \
+	../../../../apps/common/ui/lcd_driver/lcd_gc9d01.c \
+	../../../../apps/common/ui/lcd_driver/lcd_jd9853.c \
+	../../../../apps/common/ui/lcd_driver/lcd_NV3031A.c \
 	../../../../apps/common/ui/lcd_driver/lcd_st7735s.c \
+	../../../../apps/common/ui/lcd_driver/lcd_st7735p3.c \
 	../../../../apps/common/ui/lcd_driver/lcd_st7789s.c \
+	../../../../apps/common/ui/lcd_driver/lcd_st7789p3.c \
 	../../../../apps/common/ui/lcd_driver/lcd_st7789v.c \
+	../../../../apps/common/ui/lcd_driver/lcd_st77912.c \
 	../../../../apps/common/ui/lcd_driver/lcd_tm9486.c \
 	../../../../apps/common/ui/touch_panel/ft6236.c \
+	../../../../apps/common/ui/touch_panel/gst328.c \
+	../../../../apps/common/ui/touch_panel/gst820.c \
 	../../../../apps/common/ui/touch_panel/gt911.c \
 	../../../../apps/common/ui/ui_action_video.c \
 	../../../../apps/common/ui/ui_driver/interface/ui_platform.c \
@@ -367,6 +397,8 @@ c_SRC_FILES := \
 	../../../../apps/common/usb/usb_config.c \
 	../../../../apps/common/usb/usb_epbuf_manager.c \
 	../../../../apps/common/usb/usb_host_config.c \
+	../../../../apps/common/gsensor/gSensor_manage.c \
+	../../../../apps/common/gsensor/SC7A20H.c \
 	../../../../apps/wifi_story_machine/app_main.c \
 	../../../../apps/wifi_story_machine/board/wl82/board_7911B.c \
 	../../../../apps/wifi_story_machine/board/wl82/board_7911D.c \
@@ -377,13 +409,71 @@ c_SRC_FILES := \
 	../../../../apps/wifi_story_machine/bt_ble/bt_decode.c \
 	../../../../apps/wifi_story_machine/bt_ble/bt_emitter.c \
 	../../../../apps/wifi_story_machine/bt_ble/bt_music.c \
+	../../../../apps/wifi_story_machine/chatbot/ai_intelligent/http_ai_intelligent_app.c \
+	../../../../apps/wifi_story_machine/chatbot/ai_uart_ctrol.c \
+	../../../../apps/wifi_story_machine/chatbot/AT_UART_CMD.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/ad_volume.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/ai_speaker.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/aux_music.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/mode.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/mp3_buf_play.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/music_play.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/net_music.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/recorder.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/sd_music.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/usbdisk_music.c \
+	../../../../apps/wifi_story_machine/chatbot/audio/volume.c \
+	../../../../apps/wifi_story_machine/chatbot/battery_check.c \
+	../../../../apps/wifi_story_machine/chatbot/http/http_more_tts_play.c \
+	../../../../apps/wifi_story_machine/chatbot/nec_decode.c \
+	../../../../apps/wifi_story_machine/chatbot/irarc/irarc.c \
+	../../../../apps/wifi_story_machine/chatbot/irarc/irarc_instruct_word.c \
+	../../../../apps/wifi_story_machine/chatbot/key/key_vad.c \
+	../../../../apps/wifi_story_machine/chatbot/key/key_wake_aisp.c \
+	../../../../apps/wifi_story_machine/chatbot/key/tm_touch_key.c \
+	../../../../apps/wifi_story_machine/chatbot/key/tm_touch_key1.c \
+	../../../../apps/wifi_story_machine/chatbot/key/wakeup_port_touch.c \
+	../../../../apps/wifi_story_machine/chatbot/led/led.c \
+	../../../../apps/wifi_story_machine/chatbot/led/led_eya.c \
+	../../../../apps/wifi_story_machine/chatbot/led/tm_led.c \
+	../../../../apps/wifi_story_machine/chatbot/led/tm_led_earth.c \
+	../../../../apps/wifi_story_machine/chatbot/led/ws2812b.c \
+	../../../../apps/wifi_story_machine/chatbot/lte/lte_wifi_config.c \
+	../../../../apps/wifi_story_machine/chatbot/lte/usb_net_at_cmd.c \
+	../../../../apps/wifi_story_machine/chatbot/mqtt/mqtt_client.c \
+	../../../../apps/wifi_story_machine/chatbot/mqtt/mqtt_dev_info.c \
+	../../../../apps/wifi_story_machine/chatbot/printer/printer_jpeg.c \
+	../../../../apps/wifi_story_machine/chatbot/printer/printer_spi_timer.c \
+	../../../../apps/wifi_story_machine/chatbot/printer/printer_stepper_motor.c \
+	../../../../apps/wifi_story_machine/chatbot/printer/qyai_text2img.c \
+	../../../../apps/wifi_story_machine/chatbot/product_test_module.c \
+	../../../../apps/wifi_story_machine/chatbot/qyai_config.c \
+	../../../../apps/wifi_story_machine/chatbot/qyai_mutilmodal.c \
+	../../../../apps/wifi_story_machine/chatbot/sys_instruct_word.c \
+	../../../../apps/wifi_story_machine/chatbot/time/alarm.c \
+	../../../../apps/wifi_story_machine/chatbot/time/time_uart_calibration.c \
+	../../../../apps/wifi_story_machine/chatbot/time/tm1629.c \
+	../../../../apps/wifi_story_machine/chatbot/tm_instruct_word.c \
+	../../../../apps/wifi_story_machine/chatbot/uart_motor.c \
+	../../../../apps/wifi_story_machine/chatbot/unicode2utf8.c \
+	../../../../apps/wifi_story_machine/chatbot/user_data.c \
+	../../../../apps/wifi_story_machine/chatbot/user_private_cmd.c \
+	../../../../apps/wifi_story_machine/chatbot/wav_api.c \
+	../../../../apps/wifi_story_machine/chatbot/yierd_product/product_at.c \
+	../../../../apps/wifi_story_machine/chatbot/yierd_product/product_at_uart_ctrol.c \
+	../../../../apps/wifi_story_machine/iflytek/ifly_wake_demo.c \
 	../../../../apps/wifi_story_machine/multiple_ethernetif.c \
+	../../../../apps/wifi_story_machine/ui/avi_face.c \
+	../../../../apps/wifi_story_machine/ui/gif_eye.c \
 	../../../../apps/wifi_story_machine/ui/led_ui_gr202.c \
 	../../../../apps/wifi_story_machine/ui/lvgl_handwritten_demo.c \
+	../../../../apps/wifi_story_machine/ui/lvgl_ui_sysdep.c \
+	../../../../apps/wifi_story_machine/ui/logo.c \
 	../../../../apps/wifi_story_machine/video/camera_lcd_demo.c \
 	../../../../apps/wifi_story_machine/video/get_yuv_data.c \
 	../../../../apps/wifi_story_machine/video/jpeg2yuv.c \
 	../../../../apps/wifi_story_machine/video/network_mssdp.c \
+	../../../../apps/wifi_story_machine/video/simple_avi_unpkg.c \
 	../../../../apps/wifi_story_machine/video/spi_data_deal.c \
 	../../../../apps/wifi_story_machine/video/spi_recv.c \
 	../../../../apps/wifi_story_machine/video/stream/video_rt_usr.c \
@@ -391,6 +481,11 @@ c_SRC_FILES := \
 	../../../../apps/wifi_story_machine/video/strm_video_rec.c \
 	../../../../apps/wifi_story_machine/video/user_video_rec.c \
 	../../../../apps/wifi_story_machine/wifi_app_task.c \
+	../../../../apps/wifi_story_machine/yunzs/app/grammar.c \
+	../../../../apps/wifi_story_machine/yunzs/app/model_500k.c \
+	../../../../apps/wifi_story_machine/yunzs/app/uni_local_asr.c \
+	../../../../apps/wifi_story_machine/yunzs/app/uni_record.c \
+	../../../../apps/wifi_story_machine/yunzs/yunzs_wake_demo.c \
 	../../../../cpu/wl82/debug.c \
 	../../../../cpu/wl82/iic.c \
 	../../../../cpu/wl82/key/adc_api.c \
@@ -523,7 +618,7 @@ LFLAGS := \
 	../../../../cpu/wl82/liba/libauth_aisp.a \
 	../../../../cpu/wl82/liba/libauth.a \
 	../../../../cpu/wl82/liba/lib_m4a_dec.a \
-	../../../../cpu/wl82/liba/lwip_2_1_3.a \
+	../../../../cpu/wl82/liba/lwip_2_1_3_lte.a \
 	../../../../cpu/wl82/liba/wl_wifi_sta.a \
 	../../../../cpu/wl82/liba/lte_module.a \
 	../../../../cpu/wl82/liba/ai_server.a \
@@ -536,6 +631,7 @@ LFLAGS := \
 	../../../../cpu/wl82/liba/hsm.a \
 	../../../../cpu/wl82/liba/http_cli.a \
 	../../../../cpu/wl82/liba/http_server.a \
+	../../../../cpu/wl82/liba/http_chunck_stream.a \
 	../../../../cpu/wl82/liba/json.a \
 	../../../../cpu/wl82/liba/libduer-device.a \
 	../../../../cpu/wl82/liba/network_download.a \
@@ -566,6 +662,12 @@ LFLAGS := \
 	../../../../cpu/wl82/liba/lib_sbc_eng.a \
 	../../../../cpu/wl82/liba/lib_sig_mesh.a \
 	../../../../cpu/wl82/liba/crypto_toolbox_Osize.a \
+	../../../../cpu/wl82/liba/libifly_net_auth_lib.a \
+	../../../../cpu/wl82/liba/libifly_aiui_lib.a \
+	../../../../cpu/wl82/liba/libunisound.a \
+	../../../../cpu/wl82/liba/sxy_qyai.a \
+	../../../../cpu/wl82/liba/libArcLib.a \
+	../../../../cpu/wl82/liba/lib_lvgl_v8.a \
 	--end-group \
 	../../../../cpu/wl82/liba/video_dec_server.a \
 	../../../../cpu/wl82/liba/ui.a \

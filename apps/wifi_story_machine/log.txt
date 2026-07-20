@@ -1,256 +1,725 @@
+??
+[00:00:00.100]========= system reset reason: POWER ON ========= 
 
-[00:00:00.100]========= system reset reason: POWER ON ========[00:00:05.551][Debug]: [USB]get line codling
-[00:00:05.551][Debug]: [USB]dtw rate      : 460800
-[00:00:05.551][Debug]: [USB]stop bits     : 0
-[00:00:05.551][Debug]: [USB]verify bits   : 0
-[00:00:05.551][Debug]: [USB]data bits     : 8
-[00:00:05.552][Debug]: [USB]get line codling
-[00:00:05.552][Debug]: [USB]dtw rate      : 460800
-[00:00:05.552][Debug]: [USB]stop bits     : 0
-[00:00:05.552][Debug]: [USB]verify bits   : 0
-[00:00:05.552][Debug]: [USB]data bits     : 8
-[00:00:05.552][Debug]: [USB]set line coding
-[00:00:05.552][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.552][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.552][Debug]: [USB]stop bits     : 0
-[00:00:05.552][Debug]: [USB]verify bits   : 0
-[00:00:05.552][Debug]: [USB]data bits     : 8
-[00:00:05.553][Debug]: [USB]get line codling
-[00:00:05.553][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.553][Debug]: [USB]stop bits     : 0
-[00:00:05.553][Debug]: [USB]verify bits   : 0
-[00:00:05.553][Debug]: [USB]data bits     : 8
-[00:00:05.553][Debug]: [USB]set control line state - 2
-[00:00:05.553][Debug]: [USB]set line coding
-[00:00:05.553][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.553][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.553][Debug]: [USB]stop bits     : 0
-[00:00:05.553][Debug]: [USB]verify bits   : 0
-[00:00:05.553][Debug]: [USB]data bits     : 8
-[00:00:05.554][Debug]: [USB]get line codling
-[00:00:05.554][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.554][Debug]: [USB]stop bits     : 0
-[00:00:05.554][Debug]: [USB]verify bits   : 0
-[00:00:05.554][Debug]: [USB]data bits     : 8
-[00:00:05.554][Debug]: [USB]get line codling
-[00:00:05.554][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.554][Debug]: [USB]stop bits     : 0
-[00:00:05.554][Debug]: [USB]verify bits   : 0
-[00:00:05.554][Debug]: [USB]data bits     : 8
-[00:00:05.554][Info]: [USB]user setup,3
-[00:00:05.554][Debug]: [USB]get line codling
-[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.555][Debug]: [USB]stop bits     : 0
-[00:00:05.555][Debug]: [USB]verify bits   : 0
-[00:00:05.555][Debug]: [USB]data bits     : 8
-[00:00:05.555][Debug]: [USB]set line coding
-[00:00:05.555][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.555][Debug]: [USB]stop bits     : 0
-[00:00:05.555][Debug]: [USB]verify bits   : 0
-[00:00:05.555][Debug]: [USB]data bits     : 8
-[00:00:05.555][Debug]: [USB]get line codling
-[00:00:05.555][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.555][Debug]: [USB]stop bits     : 0
-[00:00:05.555][Debug]: [USB]verify bits   : 0
-[00:00:05.555][Debug]: [USB]data bits     : 8
-[00:00:05.556][Debug]: [USB]set control line state - 3
-[00:00:05.556][Debug]: [USB]set line coding
-[00:00:05.556][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.556][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.556][Debug]: [USB]stop bits     : 0
-[00:00:05.556][Debug]: [USB]verify bits   : 0
-[00:00:05.556][Debug]: [USB]data bits     : 8
-[00:00:05.556][Debug]: [USB]get line codling
-[00:00:05.556][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.556][Debug]: [USB]stop bits     : 0
-[00:00:05.556][Debug]: [USB]verify bits   : 0
-[00:00:05.556][Debug]: [USB]data bits     : 8
-[00:00:05.556][Debug]: [USB]set control line state - 3
-[00:00:05.557][Debug]: [USB]get line codling
-[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.557][Debug]: [USB]stop bits     : 0
-[00:00:05.557][Debug]: [USB]verify bits   : 0
-[00:00:05.557][Debug]: [USB]data bits     : 8
-[00:00:05.557][Debug]: [USB]get line codling
-[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.557][Debug]: [USB]stop bits     : 0
-[00:00:05.557][Debug]: [USB]verify bits   : 0
-[00:00:05.557][Debug]: [USB]data bits     : 8
-[00:00:05.557][Debug]: [USB]set line coding
-[00:00:05.557][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.557][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.558][Debug]: [USB]stop bits     : 0
-[00:00:05.558][Debug]: [USB]verify bits   : 0
-[00:00:05.558][Debug]: [USB]data bits     : 8
-[00:00:05.558][Debug]: [USB]get line codling
-[00:00:05.558][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.558][Debug]: [USB]stop bits     : 0
-[00:00:05.558][Debug]: [USB]verify bits   : 0
-[00:00:05.558][Debug]: [USB]data bits     : 8
-[00:00:05.558][Debug]: [USB]set control line state - 1
-[00:00:05.558][Debug]: [USB]set line coding
-[00:00:05.558][Debug]: [USB]USB_CDC_REQ_SET_LINE_CODING
-[00:00:05.558][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.558][Debug]: [USB]stop bits     : 0
-[00:00:05.558][Debug]: [USB]verify bits   : 0
-[00:00:05.559][Debug]: [USB]data bits     : 8
-[00:00:05.559][Debug]: [USB]get line codling
-[00:00:05.559][Debug]: [USB]dtw rate      : 1000000
-[00:00:05.559][Debug]: [USB]stop bits     : 0
-[00:00:05.559][Debug]: [USB]verify bits   : 0
-[00:00:05.559][Debug]: [USB]data bits     : 8
-[00:00:05.580]etharp_raw: sending raw ARP[RSP] packet.
-[00:00:08.050]  . ! mbedtls_ssl_handshake returned err !!! -0x6800
-[00:00:08.050]  . Retry to TLS Handshake ~~~
-[00:00:10.233]WIFI U= 0 KB/s, D= 0 KB/s
-[00:00:10.234][Info]: [HEAP_MEM]DLMALLOC_STATS:
-[00:00:10.234][Info]: [HEAP_MEM]total: 5451520
-[00:00:10.234][Info]: [HEAP_MEM]left: 3662088
-[00:00:12.032]  . 4 Performing the SSL/TLS handshake... ok 
-[00:00:12.032]  . ! The certificate is signed with an unacceptable hash
-[00:00:12.034]ThisBulkSize : 508 
-[00:00:12.156][SEND FIN]
-[00:00:12.161]mqtt_example ...
-[00:00:12.161]net_event=2, mode_type=0, net_ch=0
-[00:00:12.161]NET_EVENT_CONNECTED : 3 
-[00:00:12.161]vad_enable = 0
-[00:00:12.161][Info]: [OS]threat_create:mqtt_task,pid:0x0
-[00:00:12.162]net_connected_check ok, __this->net_connect_succ:2
-[00:00:12.162][Info]: [OS]kill for:net_check succ
-[00:00:12.164]music_play_file : mnt/sdfile/app/aupackres/tone/WifiConSucc.mp3
-[00:00:12.164][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
-[00:00:12.165][Info]: [AUDIO_SERVER]audio_dec_open
-[00:00:12.165][Info]: [AUDIO_SERVER]audo decoder try open : mp3
-[00:00:12.165][Info]: [AUDIO_DECODER]===== mp3_decoder_open =====
-[00:00:12.165][Info]: [AUDIO_DECODER]dcbuf_size = 16080
-[00:00:12.165][Info]: [AUDIO_DECODER]__mp3_get_lslen..: 7293
-[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.sr = 24000
-[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.br = 64
-[00:00:12.165][Info]: [AUDIO_DECODER]mp3 info.nch = 1
-[00:00:12.166][Info]: [AUDIO_DECODER]mp3 info.total_time = 1
-[00:00:12.166][Info]: [AUDIO_SERVER]audio_dev_set_fmt: suss  0  
-[00:00:12.166]file_name: mqtt.bin
-[00:00:12.166][Info]: [OS]threat_create:mp3_2,pid:0x43f2670
-[00:00:12.166][Info]: [AUDIO_SERVER]audio_dec_start: suss
-[00:00:12.166][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
-[00:00:12.167][Info]: [AUDIO_SERVER]audio_dec_start
-[00:00:12.167][Info]: [AUDIO_SERVER]dec list sample_rate : 24000, src : 0
-[00:00:12.167]->mqtt read info : 
-{
-  "server_port":8883,
-  "client_ID":"qyai",
-  "address":"paa2f258.ala.cn-shenzhen.emqxsl.cn",
-  "username":"ChatBot",
-  "password":"123456",
-  "ProductKey":"",
-  "DeviceName":"AABBCCDDEEFF-TEST",
-  "DeviceSecret":"",
-  "QRCode_URL":""
-}
-[00:00:12.167]---> read flash mqtt info : 8883, qyai , paa2f258.ala.cn-shenzhen.emqxsl.cn , ChatBot , 123456
-[00:00:12.167]---> MQTT connet ...
-[00:00:12.167]udp_bind: bound to 
-[00:00:12.167]0.0.0.0
-[00:00:12.167], port 31059)
-[00:00:12.190][Info]: [AUDIO_DEV]dac_streamon: sample_rate = 24000 volume = 42
-[00:00:12.190][Info]: [AUDIO_DAC]dac sample rate 24000
-[00:00:12.190][Info]: [AUDIO_DAC]sr = 6
-[00:00:12.220]music_play_file: ok
-[00:00:12.220][Info]: [OS]threat_create:wifi_pcm_stream,pid:0x0
-[00:00:12.220][Info]: [OS]threat_create:aiui_net_task,pid:0x42937d8
-[00:00:12.221]ifly_aiui_net_task, start...
-[00:00:12.221]attention: use default product uuid!!!
-[00:00:12.221]-> bt_ble_get_mac
-FF EE DD CC BB AA 
-[00:00:12.221]udp_bind: bound to 
-[00:00:12.221]0.0.0.0
-[00:00:12.221], port 58544)
-[00:00:12.222]udp_bind: bound to 
-[00:00:12.222]0.0.0.0
-[00:00:12.222], port 51944)
-[00:00:12.222]udp_bind: bound to 
-[00:00:12.222]0.0.0.0
-[00:00:12.222], port 51945)
-[00:00:12.521][RECV FIN]
-[00:00:12.931]MqttLinux socket use TLS1.2
-[00:00:12.932]LOAD  CA
-[00:00:12.933]  . Connecting to tcp/paa2f258.ala.cn-shenzhen.emqxsl.cn/8883...
-[00:00:13.111]->play_time: 1
-[00:00:13.277][Info]: [AUDIO_DECODER]__mp3_input read rlen= 80, len= 512
-[00:00:13.277][Info]: [AUDIO_DECODER]__mp3_input read rlen= 0, len= 512
-[00:00:13.277][Info]: [AUDIO_SERVER]audio_dec_wait_stop
-[00:00:13.343][Info]: [AUDIO_SERVER]audio dec end
-[00:00:13.343][Info]: [OS]kill for:mp3_2 succ
-[00:00:13.344]->local_music: AUDIO_SERVER_EVENT_END
-[00:00:13.344][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
-[00:00:13.344][Info]: [AUDIO_SERVER]audio_dec_stop
-[00:00:13.344][Info]: [AUDIO_SERVER]audio_dec_pause
-[00:00:13.401][Info]: [AUDIO_DECODER]===== mp3_decoder_close =====
-[00:00:13.402]vad_enable = 1
-[00:00:14.056][RECV FIN]
-[00:00:14.057][SEND RST]
-[00:00:14.492]2026:06:17   02:27:19 
+[00:00:00.100]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[00:00:00.100]   WL82(AC791N) CHIP_ID: 0x6f01  setup_arch Jul 17 2026 15:55:06
+[00:00:00.100]sys_clk = 320000000,sdram_clk = 160000000,hsb_clk = 160000000,lsb_clk = 53333333, sfc_clk = 80000000
+[00:00:00.100]CODE+CONST SIZE = 1524480
+[00:00:00.100]SDRAM_SIZE = 8388608, DATA_SIZE = 7796,BSS_SIZE = 561576,REMAIN_SIZE = 7819236
+[00:00:00.100]RAM_SIZE = 523596,DATA_SIZE = 59516,BSS_SIZE = 353820,REMAIN_SIZE = 110260
+[00:00:00.100]CACHE_RAM_SIZE = 0,DATA_SIZE = 0, BSS_SIZE = 0,REMAIN_SIZE = 0
+[00:00:00.100]HEAP_SIZE = 6294592
+[00:00:00.100]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[00:00:00.100]cpu 0 usp limit 0  ffffffff
+[00:00:00.100]cpu 0 ssp limit 1c16f88  1c17f88
+[00:00:00.100][Info]: [OS]task_create: app_core, 0x40106a4
+[00:00:00.100]init tick  timer
+[00:00:00.100]pc0 :4000120---4174420
+[00:00:00.100]pc1 :1c00000---1c0bf0c
+[00:00:00.101]cpu 1 usp limit 0  ffffffff
+[00:00:00.101]cpu 1 ssp limit 1c18288  1c19288
+[00:00:00.102][Info]: [OS]task_create: systimer, 0x402d420
+[00:00:00.103][Info]: [OS]task_create: sys_timer, 0x402d760
+[00:00:00.103][Info]: [AUDIO_DAC]dac_early_init
+[00:00:00.104][Info]: [AUDIO_DAC]analog init ok!
+[00:00:00.105][Info]: [UART]find uart dev :  uart0
+[00:00:00.105][Info]: [UART]find uart dev :  uart1
+[00:00:00.106][Info]: [UART]find uart dev :  uart2
+[00:00:00.106]================= SDK Version    AC79NN SDK on branch [release/AC79NN_SDK_V1.2.0] tag [AC79NN_SDK_V1.2.1_2023-12-13]     ===============
+[00:00:00.108]INCLUDE_BTCTRLER-$e6b3978
+[00:00:00.108]INCLUDE_BTSTACK-$a3212be
+[00:00:00.109]INCLUDE_DRIVER-$8e65a70
+[00:00:00.109]INCLUDE_MEDIA-$dde503d
+[00:00:00.110]INCLUDE_NET-$4c6ab13
+[00:00:00.110]INCLUDE_SERVER-$8b0a7d5
+[00:00:00.111]INCLUDE_SYSTEM-$71d8ed8
+[00:00:00.111]INCLUDE_UPDATE-$679350b
+[00:00:00.112]INCLUDE_UTILS-$7ac4952
+[00:00:00.112]NET-$807643d8
+[00:00:00.112]SERVER-$173b54e
+[00:00:00.113]UTILS-$a5b03f5
+[00:00:00.113]SYSTEM-$e9867a1
+[00:00:00.113]DRIVER-*modified*-liangyongxin-@20240816-$19fa895
+[00:00:00.114]UPDATE-*modified*-tanchiquan-@20250922-$3375089
+[00:00:00.115]BTCTRLER-*modified*-tanchiquan-@20250327-$4a2665d
+[00:00:00.115]BTSTACK-$5ffe4e9
+[00:00:00.116]=======================================
+[00:00:00.117][Info]: [OS]task_create: sys_event, 0x402c3b8
+[00:00:00.117][Info]: [SDFILE]VM size: 0x8000 @ 0x706000
+[00:00:00.118][Info]: [SDFILE]disk capacity 8192 KB
+[00:00:00.119][Info]: [SDFILE]last file_addr:13664c 1c958
 
-[00:00:14.500]get_NTP_time: 2026-6-17 10:27:19
-[00:00:14.500]-> setting no alarm 
-[00:00:14.500]-> bt_ble_get_mac
-FF EE DD CC BB AA 
-[00:00:14.500]attention: use default product uuid!!!
-[00:00:14.500]body_dat: 
-{"mac":"AABBCCDDEEFF-8FXdSDVy-B1N1-TestBox","alarm":[]}
-[00:00:14.503]  . 1 mbedtls init ... ok 
-[00:00:14.503]udp_bind: bound to 
-[00:00:14.503]0.0.0.0
-[00:00:14.503], port 8389)
-[00:00:15.234]WIFI U= 4 KB/s, D= 0 KB/s
-[00:00:15.234][Info]: [HEAP_MEM]DLMALLOC_STATS:
-[00:00:15.234][Info]: [HEAP_MEM]total: 5451520
-[00:00:15.234][Info]: [HEAP_MEM]left: 3446408
-[00:00:15.363][RECV SYN]
-[00:00:15.364][1;35m[DEBUG][aiui_socket ##137]connect success[0m
-[00:00:15.571]  . 2 Loading the CA root certificate ... ok 
-[00:00:16.369][RECV SYN]
-[00:00:16.379][RECV SYN]
-[00:00:18.140]-> bt_ble_get_mac
-FF EE DD CC BB AA 
-[00:00:18.140]attention: use default product uuid!!!
-[00:00:18.140]-> OTA : 8FXdSDVy-B1N1-TestBox-V1
-[00:00:18.520][RECV RST]
-[00:00:20.234]WIFI U= 0 KB/s, D= 0 KB/s
-[00:00:20.235][Info]: [HEAP_MEM]DLMALLOC_STATS:
-[00:00:20.235][Info]: [HEAP_MEM]total: 5451520
-[00:00:20.235][Info]: [HEAP_MEM]left: 3395976
-[00:00:20.320][SEND FIN]
-[00:00:20.331]ConnectNetwork err : -1
-[00:00:20.331][Info]: [OS]kill for:mqtt_task succ
-[00:00:20.360][SEND FIN]
-[00:00:20.370][1;35m[DEBUG][aiui_convert ##57]parse active failed, can not find header[0m
-[00:00:20.370]audio active success
-[00:00:20.371][Info]: [OS]threat_create:aiui_ntp_task,pid:0x42937e8
-[00:00:20.371]time = 1781663244
-[00:00:20.371]IFLY_AIUI_NTP_TIME, ifly_ntp_time_status= 1, gv_ifly_aiui_get_ntp_time_retry=0
-[00:00:20.371]udp_bind: bound to 
-[00:00:20.371]0.0.0.0
-[00:00:20.371], port 51946)
-[00:00:20.546][RECV RST]
-[00:00:21.787]2026:06:17   02:27:27 
+[00:00:00.119][Info]: [SDFILE]end_addr:153000
 
-[00:00:21.790]set_sys_time : 2026-6-17,10:27:27
-[00:00:21.790]net_event=12, mode_type=0, net_ch=0
-[00:00:22.549][RECV SYN]
-[00:00:22.743][RECV SYN]
-[00:00:22.744]  . 3 Setting up the SSL/TLS structure... ok
-[00:00:22.790]IFLY_AIUI_NTP_TIME, ifly_ntp_time_status= 0, gv_ifly_aiui_get_ntp_time_retry=1
-[00:00:22.790]IFLY_AIUI_CONNECT_SERVER_MSG, vl_connect_status=0
-[00:00:22.790][Info]: [OS]kill for:aiui_ntp_task succ
-[00:00:22.791]ifly_aiui_websockets_connect, websocket_valid=0, recv_thread_id=0x0
-[00:00:22.791]  . ! Client websocket init error !!!
-[00:00:22.799][RECV SYN]
-[00:00:22.995][RECV SYN]
-[00:00:23.207][RECV SYN]
-[00:00:23.401][RECV SYN]
-[00:00:25.235]WIFI U= 0 KB/s, D= 2 KB/s
-[00:00:25.235][Info]: [HEAP_MEM]DLMALLOC_STATS:
-[00:00:25.235][Info]: [HEAP_MEM]total: 5451520
-[00:00:25.235][Info]: [HEAP_MEM]left: 3368584
+
+49 53 44 55 04 02 52 FF 4B F1 84 D0 BD BE FF FF 
+[00:00:00.121][Debug]: [SDFILE]sdfile mount succ
+[00:00:00.124][Info]: [VM]vm_info:addr:0x706000, len:0x8000, mode:0x0, max_items: 256
+[00:00:00.125][Info]: [VM]--func = vm_init--
+[00:00:00.126][Info]: [VM]--vm_adr = 0x706000--
+[00:00:00.126][Info]: [VM]--vm_len = 0x8000--
+[00:00:00.127][Info]: [VM]--vm_mode = 0x0--
+[00:00:00.127][Info]: [VM]--vm_adr_ali = 0x706000--
+[00:00:00.128][Info]: [VM]--vm_len_ali = 0x8000--
+[00:00:00.129][Info]: [VM]--vm_mode = 0x0--
+[00:00:00.129][Info]: [VM]vm_area_a adr = 0x706000
+[00:00:00.130][Info]: [VM]vm_area_a len = 0x4000
+[00:00:00.130][Info]: [VM]vm_area_b adr = 0x70a000
+[00:00:00.131][Info]: [VM]vm_area_b len = 0x4000
+[00:00:00.132][Info]: [VM]vm_area_a magic = 0xffffffff
+[00:00:00.132][Info]: [VM]vm_area_b magic = 0x55aaaa55
+[00:00:00.133][Info]: [VM]---VM_AREA_USING  = 1---
+[00:00:00.136][Info]: [VM]vm_find_all_index_last_updated_addr CRC_ERROR, maybe power down cause.
+[00:00:00.137][Info]: [VM]vm_crc = 0xff
+[00:00:00.138][Info]: [VM]crc_c = 0x1f
+[00:00:00.139][Info]: [VM]---VM_LAST_ADR= 0x70b632---
+[00:00:00.139][Info]: [VM]VM_LAST_ADR = 0x70b632     
+[00:00:00.140][Info]: [VM]VM_AREA_ADR(VM_AREA_USING)= 0x70a000       
+[00:00:00.141][Info]: [VM]warning_adr = 0x2666
+[00:00:00.141][Info]: [VM]VM 34 % full
+[00:00:00.142][Info]: [PMU]POWER_OSC_INFO: LRC - 00032000
+[00:00:00.143][Info]: [PMU]Delay n * uS: 40
+[00:00:00.144][Info]: [PMU]Prepare : 31(us) / Recover 4000(us) / 4000(us)
+[00:00:00.144][Info]: [PMU]Low power Tprp : 0x1 / Tcke : 0x80
+[00:00:00.145][Info]: [PMU]Low power Reserve time: 0xf3 (tick) / 7593(us)
+[00:00:00.146][Info]: [PMU]DCDC14 : VDC14_VOL_SEL_140V 
+[00:00:00.147][Info]: [PMU]power VDDIO : VDDIOM_VOL_32V / VDDIOW_VOL_32V
+[00:00:00.148][Info]: [WKUP]JL_P33->RTC_CON : 18
+[00:00:00.148][Info]: [RTC][RTC]>>>use ic use_rtc_power is VDDIO
+[00:00:00.149][Info]: [RTC]rtc_read_sys_time: 2026-7-17 17:8:36
+[00:00:00.150][Info]: [RTC]read_RTC_POR_FLAG = 0x20
+[00:00:00.155]vbat_adc_value = 358
+[00:00:00.158]vbg_adc_value = 256
+[00:00:00.159][Info]: [OS]threat_create:irkey_evt_task,pid:0x0
+[00:00:00.160]irkey_evt_task created successfully!
+[00:00:00.160][Info]: [USER_CFG]edr name config:JL_AC79XX
+
+[00:00:00.161][Info]: [USER_CFG]ble name config:JL_AC79XX_BLE
+
+[00:00:00.162]read user mac : 6, size: 6
+
+FF FF FF FF FF FF 
+[00:00:00.163]read invalid mac FF:FF:FF:FF:FF:FF
+[00:00:00.163][Info]: [SYSCFG]get_bt_mac_addr key_mac no crc
+[00:00:00.164][Info]: [USER_CFG]edr mac addr config
+
+
+5C 19 5B 1D 22 B5 
+[00:00:00.165][Info]: [USER_CFG]ble mac addr config
+
+
+FF FF FF FF FF FF 
+[00:00:00.166][Info]: [USER_CFG]rf bt_power:8, ble_power:6
+
+[00:00:00.167][Info]: [USER_CFG]pincode : 0000
+
+[00:00:00.167][Info]: [USER_CFG]lrc cfg
+
+[00:00:00.168][Info]: [USER_CFG]wifi ssid config:GTSWIFI
+
+[00:00:00.169][Info]: [USER_CFG]wifi pwd config:
+
+
+0B 0B 01 07 04 07 0B 07 07 32 32 32 32 48 48 55 
+50 40 40 3E 34 48 5A 50 40 40 40 32 2B 06 01 
+[00:00:00.170][Info]: [USER_CFG]auto_off_time:5
+
+[00:00:00.171][Info]: [USER_CFG]vddiom:3.20V, vddiow:2.10V, vdd14:1.40V, sysvdd:1.26V
+
+[00:00:00.172][Info]: [UPDATE]update module init ok
+
+[00:00:00.173][Info]: [UPDATE]SOURCE MODE:[backup update]
+[00:00:00.174][Info]: [UPDATE]Reserved Local Check: Record Info Not Exist
+[00:00:00.175][Info]: [OS]task_create: audio_server, 0x40440c2
+[00:00:00.175]->production_io = 0, 0 0 
+[00:00:00.176][Info]: [OS]threat_create:http_ota,pid:0x0
+[00:00:00.177]->production_io = 0, 0 0 
+[00:00:00.177][Info]: [AUDIO_SERVER]audio_server_open
+[00:00:00.178][Info]: [OS]threat_create:audio_mix,pid:0x41c83b0
+[00:00:00.179][Info]: [OS]task_create: alarm_task, 0x4026306
+[00:00:00.179][Info]: [OS]threat_create:websockets_timer,pid:0x0
+[00:00:00.180]music_buf_task
+[00:00:00.181][Info]: [AUDIO_SERVER]audio_server_open
+[00:00:00.181][Info]: [AUDIO_SERVER]audio_server_open
+[00:00:00.182][Info]: [OS]threat_create:music_buf_play,pid:0x0
+[00:00:00.183]------------- wifi_story_machine app main -------------
+[00:00:00.183]-> check UUID OK
+[00:00:00.184]wireless_net_init 
+
+[00:00:00.184][Info]: [OS]threat_create:wifi_app_task,pid:0x0
+[00:00:00.185]====net_mode:0, ====net_ch:0
+[00:00:00.186]->music_play_init
+[00:00:00.186][Info]: [AUDIO_SERVER]audio_server_open
+[00:00:00.187]music_play_file : mnt/sdfile/app/aupackres/tone/AiMode.mp3
+[00:00:00.188][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:00.189][Info]: [AUDIO_SERVER]audio_dec_open
+[00:00:00.190][Info]: [AUDIO_SERVER]audo decode type : mp3 mp3
+[00:00:00.191][Info]: [AUDIO_DECODER]===== mp3_decoder_open =====
+[00:00:00.191][Info]: [AUDIO_DECODER]dcbuf_size = 16080
+[00:00:00.192][Info]: [AUDIO_DECODER]__mp3_get_lslen..: 9021
+[00:00:00.193][Info]: [AUDIO_DECODER]mp3 info.sr = 24000
+[00:00:00.194][Info]: [AUDIO_DECODER]mp3 info.br = 64
+[00:00:00.194][Info]: [AUDIO_DECODER]mp3 info.nch = 1
+[00:00:00.195][Info]: [AUDIO_DECODER]mp3 info.total_time = 1
+[00:00:00.196][Info]: [AUDIO_SERVER]audio_dec_ops_open: exit
+[00:00:00.196][Info]: [AUDIO_DEV]vcm early init start
+[00:00:00.197]=====wifi_and_network_on=====
+[00:00:00.198]put_ncmsg 16
+[00:00:00.198][Info]: [OS]threat_create:_rpc_wifi_app_task_e069a909,pid:0x0
+
+
+
+
+[00:00:00.199]cur_wifi_vm_info:had_stored[1],store[1],force[0]
+[00:00:00.200]cur_wifi_vm_info STA_MODE, ssid=YXZK_2.4G,pwd=AS123456,best=0
+[00:00:00.201]---> initiate .mode = 1
+[00:00:00.201][Info]: [OS]threat_create:tasklet,pid:0x41c84ac
+[00:00:00.202]wl sta_mode
+[00:00:00.206]->wifi_get_xosc xosc 锛?11 , 11 
+[00:00:00.207]wifi_get_xosc xosc_l : 11 xosc_r : 11, OSC_24M
+
+[00:00:00.209] 2394 bank: 37 
+[00:00:00.209]bak: 3f 0 
+[00:00:00.210]bak: 3e 1 
+[00:00:00.211]bak: 3d 2 
+[00:00:00.212]bak: 3c 3 
+[00:00:00.215]bak: 3b 4 
+[00:00:00.217]bak: 3a 5 
+[00:00:00.220]bak: 39 6 
+[00:00:00.223]bak: 38 7 
+[00:00:00.226]bak: 37 8 
+[00:00:00.229]bak: 36 9 
+[00:00:00.232]bak: 35 10 
+[00:00:00.235]bak: 34 11 
+[00:00:00.238]bak: 33 12 
+[00:00:00.241]bak: 32 13 
+[00:00:00.244]bak: 31 14 
+[00:00:00.247]bak: 30 15 
+[00:00:00.250]bak: 2f 16 
+[00:00:00.250]bak: 2e 17 
+[00:00:00.251]bak: 2d 18 
+[00:00:00.251]bak: 2c 19 
+[00:00:00.252]bak: 2b 20 
+[00:00:00.252]bak: 2a 21 
+[00:00:00.253]bak: 29 22 
+[00:00:00.253]bak: 28 23 
+[00:00:00.254]bak: 27 24 
+[00:00:00.256]bak: 26 25 
+[00:00:00.258]bak: 25 26 
+[00:00:00.260]bak: 24 27 
+[00:00:00.260]bak: 23 28 
+[00:00:00.261]bak: 22 29 
+[00:00:00.261]bak: 21 30 
+[00:00:00.262]bak: 20 31 
+[00:00:00.262]bak: 1f 32 
+[00:00:00.263]bak: 1e 33 
+[00:00:00.263]bak: 1d 34 
+[00:00:00.263]bak: 1c 35 
+[00:00:00.264]bak: 1b 36 
+[00:00:00.264]bak: 1a 37 
+[00:00:00.265]bak: 19 38 
+[00:00:00.265]bak: 18 39 
+[00:00:00.266]bak: 17 40 
+[00:00:00.266]bak: 16 41 
+[00:00:00.266]bak: 15 42 
+[00:00:00.267]bak: 14 43 
+[00:00:00.267]bak: 13 44 
+[00:00:00.268]bak: 12 45 
+[00:00:00.268]bak: 11 46 
+[00:00:00.269]setbak:36
+[00:00:00.269] wifi quick_start_trim ok.  
+[00:00:00.270] PA_C_I: 1,7,4,7,11,1,7
+[00:00:00.270]  wf_rf init  end .... 
+[00:00:00.280]->wifi_get_mcs_dgain 
+32 32 32 32 48 48 55 50 40 40 3E 34 48 5A 50 40 
+40 40 32 2B 
+
+[00:00:00.281] ..... wfhw_init finish !!! ...... 
+[00:00:00.281][Info]: [PMU]low_power_group0_lock
+[00:00:00.282][Info]: [PMU]low_power_group0_unlock
+[00:00:00.283]--> BssTableAlloc
+[00:00:00.284]<-- BssTableAlloc
+[00:00:00.285][Info]: [OS]threat_create:RtmpMlmeTask,pid:0x41c84b0
+[00:00:00.286][Info]: [OS]threat_create:RtmpCmdQTask,pid:0x41c84b4
+[00:00:00.290]read user mac : 6, size: 6
+
+FF FF FF FF FF FF 
+[00:00:00.290]read invalid mac FF:FF:FF:FF:FF:FF
+[00:00:00.291][Info]: [SYSCFG]get_bt_mac_addr key_mac no crc
+[00:00:00.292]get_flash_mac_addr valid [5c:19:5b:1d:22:b5] 
+[00:00:00.292]wifi use flash_uid+random mac[5c:19:5b:1d:22:b5] 
+[00:00:00.294]wifi_module_get_sta_ssid = YXZK_2.4G 
+[00:00:00.299]Key1Str is Invalid key length(0) or Type(0)
+[00:00:00.300]Key2Str is Invalid key length(0) or Type(0)
+[00:00:00.301]Key3Str is Invalid key length(0) or Type(0)
+[00:00:00.302]Key4Str is Invalid key length(0) or Type(0)
+LA
+[00:00:00.309]Current MAC: =5c:19:5b:1d:22:b5
+[00:00:00.310]RTMPSetPhyMode : PhyMode=0, channel=1 
+[00:00:00.310]MCS Set = 00 00 00 00 00
+
+
+
+
+[00:00:00.312]  skip do auto reconnect...
+
+
+[00:00:00.313][Info]: [OS]threat_create:wl_rx_irq_thread,pid:0x41c8360
+[00:00:00.314]netdev_set_mac_addr = 5c:19:5b:1d:22:b5 
+[00:00:00.315]*******************Init_LwIP*******************
+[00:00:00.315]|Init_LwIP [1]
+[00:00:00.316][Info]: [OS]threat_create:tcpip_thread,pid:0x0
+[00:00:00.317]netif: netmask of interface  set to 255.255.255.0
+[00:00:00.317]netif: GW address of interface  set to 192.168.0.1
+[00:00:00.318]netif_set_ipaddr: netif address being changed
+[00:00:00.319]Default network interface: wl
+[00:00:00.319]ip4 address: 192.168.0.1
+[00:00:00.320]gw address: 192.168.0.1
+[00:00:00.320]net mask  : 255.255.255.0
+
+[00:00:00.321]|network_user_callback->WIFI_EVENT_MODULE_START
+[00:00:00.322]---> info.mode = 1, YXZK_2.4G, GJ1
+[00:00:00.322]wl_set_fallback_tx_rate:
+[00:00:00.323]HT_FBK_CFG0=0x65432100 
+[00:00:00.323]LG_FBK_CFG0=0xedcba988 
+[00:00:00.324]LG_FBK_CFG1=0x2100 
+[00:00:00.324]wifi_module_enter_sta_mode->YXZK_2.4G, AS123456
+[00:00:00.325]stored pmk_info match[YXZK_2.4G] [AS123456],,,
+[00:00:00.326]netlink not startup
+[00:00:00.326]use record bssid :
+58 C7 AC 40 06 1D 
+[00:00:00.327]===>rt_ioctl_giwscan. 1(1) BSS returned, data->length = 139
+[00:00:00.328]wpas_dbus_signal_scan_done = 1
+Considering connect request: reassociate: 0  selected: 58:c7:ac:40:06:1d  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: DISCONNECTED  ssid=4498340  current_ssid=0Request association with 58:c7:ac:40:06:1d
+[00:00:00.331]|network_user_callback->WIFI_EVENT_STA_START
+[00:00:00.332][Info]: [OS]kill for:_rpc_wifi_app_task_e069a909 succ
+[00:00:00.333]read user mac : 6, size: 6
+
+FF FF FF FF FF FF 
+[00:00:00.333]read invalid mac FF:FF:FF:FF:FF:FF
+[00:00:00.334][Info]: [SYSCFG]get_bt_mac_addr key_mac no crc
+[00:00:00.335]-> bt_ble_get_mac
+5C 19 5B 1D 22 B5 
+
+BD 2A 7D 1D 22 B5 
+[00:00:00.336][Info]: [BT]
+-----edr + ble 's address-----
+
+BD 2A 7D 1D 22 B5 
+[00:00:00.337]le_support:3 1
+[00:00:00.337]le_config:1 1 1 1
+[00:00:00.337][Info]: [LMP]>>>btctrler_task_init<<<
+[00:00:00.338][Info]: [OS]^TASK[#C0btctrler] RUN IN CPU0
+[00:00:00.339][Info]: [OS]task_create: #C0btctrler, 0x414829c
+
+
+[00:00:00.339] WL82 analog init ok  ......
+
+
+[00:00:00.340] BT_TX_IQ: 126  127 -6 
+[00:00:00.340] BT_OF: 0  3 
+[00:00:00.341][Info]: [HCI_LMP]init
+[00:00:00.341][Info]: [HCI_LMP]open
+[00:00:00.342]link_rx_bulk_init:  1c122e0, 4590
+[00:00:00.342]link_tx_bulk_init:  1c0f8e0, 2a00
+[00:00:00.343][Info]: [PMU]low_power_group0_lock
+[00:00:00.343][Info]: [PMU]low_power_group0_unlock
+[00:00:00.344][yeng t]  [sBUialeufimi 5l:cn:ac:40:06:1d ( /I0x5Ye
+K_2.4G' freq=242 MHz)0:00.345][Info]: [OS]^TASK[#C0btstack] RUN IN CPU0
+[00:00:00.346]lmp_tx_disconnect: 0
+[00:00:00.346]lmp_tx_disconnect: 0
+[00:00:00.347]wpas_dbus_signal_prop_changed = 5, time=30 
+[00:00:00.347]read user mac : 6, size: 6
+
+FF FF FF FF FF FF 
+[00:00:00.348]read invalid mac FF:FF:FF:FF:FF:FF
+[00:00:00.349][Info]: [SYSCFG]get_bt_mac_addr key_mac no crc
+[00:00:00.349]==>rt_ioctl_siwfreq::SIOCSIWFREQ(Channel=11)
+[00:00:00.350]read user mac : 6, size: 6
+
+FF FF FF FF FF FF 
+[00:00:00.351]read invalid mac FF:FF:FF:FF:FF:FF
+[00:00:00.351][Info]: [SYSCFG]get_bt_mac_addr key_mac no crc
+[00:00:00.352]-> bt_name : QYAI_22B5 
+[00:00:00.352][Info]: [HCI_LMP]local_name QYAI_22B5
+
+[00:00:00.353][Info]: [HCI_LMP]32 10
+[00:00:00.354]btstack_mem_init 3452
+[00:00:00.354]RtmpIoctl_siwessid = YXZK_2.4G
+[00:00:00.355][Info]: [LMP]HCI_WRITE_SCAN_ENABLE : 0
+[00:00:00.355]Set_SSID_Proc[YXZK_2.4G] skip, avoid break assoic.r
+[00:00:00.356]ble profile init
+[00:00:00.358]fail select SC!!!,need config_le_sm_sub_sc_enable = 1
+[00:00:00.358]wpas_dbus_signal_prop_changed = 5, time=30 
+
+[00:00:00.359]CNTL - joining 58:c7:ac:40:06:1d ...
+[00:00:00.360][Info]: [OS]task_create: #C0btstack, 0x4166b16
+[00:00:00.361]-> bt_ble_get_mac
+BD 2A 7D 1D 22 B5 
+
+[00:00:00.361]=============================================================
+[00:00:00.362]->MAC : B5221D7D2ABD
+
+[00:00:00.417]PeerAssocReqSanity - IE_EXT_CAPABILITY!
+[00:00:00.418]!!! LINK UP !!! (BssType=1, AID=2, ssid=YXZK_2.4G, Channel=11, CentralChannel = 9)
+[00:00:00.420]wpas_dbus_signal_prop_changed = 6, time=30 
+[00:00:00.420]wpas_dbus_signal_prop_changed = 6, time=30 
+[00:00:00.421]wpas_dbus_signal_prop_changed = 6, time=30 
+[00:00:00.422]wpa_supplicant_select_config drv_ssid, YXZK_2.4G
+
+Associated with 58:c7:ac:40:06:1d
+[00:00:00.427]wpas_dbus_signal_prop_changed = 7, time=30 
+[00:00:00.429]ThisBulkSize : 184 
+[00:00:00.634]wpas_dbus_signal_prop_changed = 8, time=30 
+WPA: Key negotiation completed with 58:c7:ac:40:06:1d [PTK=CCMP GTK=CCMP]
+[00:00:00.635]wpas_dbus_signal_prop_changed = 9, time=30 
+[00:00:00.636]put_ncmsg 7
+[00:00:00.637][Info]: [OS]threat_create:_rpc_tasklet_39f3cc02,pid:0x0
+[00:00:00.637]wpas_dbus_signal_prop_changed = 9, time=30 
+[00:00:00.638]|network_user_callback->WIFI_STA_CONNECT_SUCC,CH=11
+[00:00:00.639]compare_dhcp_ipaddr not Match!!! [YXZK_2.4G][YXZK_2.4G],[0x5c,0xb5][0x5c,0xb5],[0x10aa8c0] 
+[00:00:00.640]|lwip_renew [1][1].
+[00:00:00.641][Info]: [OS]kill for:_rpc_tasklet_39f3cc02 succ
+[00:00:00.641]dhcp_start(netif=41c8cdc) wl0
+[00:00:00.642]udp_bind: bound to 
+[00:00:00.642]0.0.0.0
+[00:00:00.643], port 68)
+[00:00:00.643]udp_connect: connected to 
+[00:00:00.643]0.0.0.0
+[00:00:00.644], port 67)
+[00:00:00.644]ThisBulkSize : 396 
+[00:00:00.645]dhcp_discover: SELECTING
+[00:00:00.645]dhcp_discover(): set request timeout 2000 msecs
+[00:00:00.683]dhcp_handle_offer(): server 0x010aa8c0
+[00:00:00.684]dhcp_handle_offer(): offer for 0x7908a8c0
+[00:00:00.684]dhcp_select: REQUESTING
+[00:00:00.685]dhcp_select(): set request timeout 2000 msecs
+[00:00:00.700]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.704]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.707]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.737]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.758]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.759]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.860][Info]: [OS]kill for:wifi_app_task succ
+[00:00:00.888]DHCP_PROVIDE_DNS_SERVERS[0[0x10aa8c0]
+[00:00:00.889]USER_PROVIDE_BACKUP_DNS_SERVERS[1][0x72727272]
+[00:00:00.889]USER_PROVIDE_BACKUP_DNS_SERVERS[2][0x4c4c4cb4]
+[00:00:00.890]USER_PROVIDE_BACKUP_DNS_SERVERS[3][0x50505df]
+[00:00:00.891]USER_PROVIDE_BACKUP_DNS_SERVERS[4][0x8040201]
+[00:00:00.891]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:00.892]dhcp_check(): set request timeout 500 msecs
+[00:00:00.904]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:00.910]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.000][Info]: [AUDIO_DEV]vcm early init end
+[00:00:01.000][Info]: [AUDIO_DAC]dac open start
+[00:00:01.001][Info]: [AUDIO_DAC]trim0 0xf800f800
+[00:00:01.001][Info]: [AUDIO_DAC]dac open end
+[00:00:01.002][Info]: [AUDIO_SERVER]audio_dev_set_fmt: suss  0  
+[00:00:01.003][Info]: [OS]threat_create:mp3_0,pid:0x4487970
+[00:00:01.004][Info]: [AUDIO_SERVER]audio_dec_start: suss
+[00:00:01.004][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:01.005][Info]: [AUDIO_SERVER]audio_dec_start
+[00:00:01.006][Info]: [AUDIO_SERVER]dec list sample_rate : 24000, src : 0
+[00:00:01.009]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.010]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.010]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.030][Info]: [AUDIO_DEV]dac_streamon: sample_rate = 24000 volume = 42
+[00:00:01.030][Info]: [AUDIO_DAC]dac sample rate 24000
+[00:00:01.031][Info]: [AUDIO_DAC]sr = 6
+[00:00:01.060]music_play_file: ok
+[00:00:01.060]-> app : ai_speaker
+[00:00:01.118]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.139]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.214]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.235]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.310]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:01.310]dhcp_fine_tmr(): request timeout
+[00:00:01.311]dhcp_timeout(): CHECKING, ARP request timed out
+[00:00:01.312]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:01.312]dhcp_check(): set request timeout 500 msecs
+[00:00:01.330]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.377]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.415]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.426]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.509]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.512]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.554]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.591]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.698]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.699]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.746]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.801]etharp_input: we are unconfigured, ARP request ignored.
+[00:00:01.810]dhcp_fine_tmr(): request timeout
+[00:00:01.810]dhcp_timeout(): CHECKING, ARP request timed out
+[00:00:01.811]dhcp_bind(): set request timeout 86400000 msecs
+[00:00:01.812]dhcp_bind(): set request timeout 43200000 msecs
+[00:00:01.812]dhcp_bind(): set request timeout 75600000 msecs
+[00:00:01.813]dhcp_bind(): IP: 0x7908a8c0 SN: 0x00fcffff GW: 0x010aa8c0
+[00:00:01.814]netif: netmask of interface wl set to 255.255.252.0
+[00:00:01.815]netif: GW address of interface wl set to 192.168.10.1
+[00:00:01.815]netif_set_ipaddr: netif address being changed
+[00:00:01.840]Default network interface: wl
+[00:00:01.840]ip4 address: 192.168.8.121
+[00:00:01.841]gw address: 192.168.10.1
+[00:00:01.841]net mask  : 255.255.252.0
+
+[00:00:01.842]put_ncmsg 11
+[00:00:01.842][Info]: [OS]threat_create:_rpc_tcpip_thread_43d9a729,pid:0x0
+[00:00:01.843][Info]: [OS]threat_create:ntp_client_get_time,pid:0x0
+[00:00:01.844]|network_user_callback->WIFI_EVENT_STA_NETWPRK_STACK_DHCP_SUCC
+[00:00:01.845]***WIFI DHCP SUCC, IP:[192.168.8.121] , GW:[192.168.10.1] , NETMASK:[255.255.252.0]
+[00:00:01.846]udp_bind: bound to 
+[00:00:01.846]0.0.0.0
+[00:00:01.847], port 58951)
+[00:00:01.847]udp_bind: bound to 
+[00:00:01.847]0.0.0.0
+[00:00:01.848], port 58952)
+[00:00:01.848]udp_bind: bound to 
+[00:00:01.848]0.0.0.0
+[00:00:01.849], port 2911)
+[00:00:01.849]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:01.866]udp_bind: bound to 
+[00:00:01.866]0.0.0.0
+[00:00:01.866], port 64923)
+[00:00:01.887]udp_bind: bound to 
+[00:00:01.887]0.0.0.0
+[00:00:01.888], port 23256)
+[00:00:01.953]->play_time: 1
+[00:00:01.960]ftpd_server init ok
+[00:00:01.960]compare_dhcp_ipaddr Match
+[00:00:01.961][Info]: [OS]threat_create:net_check,pid:0x0
+[00:00:01.961][Info]: [OS]kill for:_rpc_tcpip_thread_43d9a729 succ
+[00:00:01.962]-> bt_ble_get_mac
+BD 2A 7D 1D 22 B5 
+[00:00:01.963]attention: use default product uuid!!!
+[00:00:01.964]  . url addr : chat
+[00:00:01.964]  . 1 mbedtls init ... ok 
+[00:00:01.964]  . file : /chat/B5221D7D2ABD-8FXdSDVy-B1N1-TestBox 
+[00:00:01.966]udp_bind: bound to 
+[00:00:01.967]0.0.0.0
+[00:00:01.967], port 20885)
+[00:00:02.084]WL_RX: FifoOverflowCount= 14
+[00:00:02.128]  . idns BBDPJGPBIBPEC
+[00:00:02.131]  . 2 Loading the CA root certificate ... ok 
+[00:00:02.135]etharp_raw: sending raw ARP[RSP] packet.
+[00:00:02.136]2026:07:17   08:22:09 
+
+[00:00:02.140]set_sys_time : 2026-7-17,16:22:9
+[00:00:02.140][Info]: [OS]kill for:ntp_client_get_time succ
+[00:00:02.151][RECV SYN]
+[00:00:02.151]*****************mbedtls_ssl_list_ciphersuites = TLS-RSA-WITH-AES-256-CBC-SHA256
+[00:00:02.152]*****************mbedtls_ssl_list_ciphersuites = TLS-RSA-WITH-AES-256-CBC-SHA
+[00:00:02.153]*****************mbedtls_ssl_list_ciphersuites = TLS-RSA-WITH-AES-128-CBC-SHA256
+[00:00:02.155]*****************mbedtls_ssl_list_ciphersuites = TLS-RSA-WITH-AES-128-CBC-SHA
+[00:00:02.156]*****************mbedtls_ssl_list_ciphersuites = TLS-PSK-WITH-AES-256-CBC-SHA
+[00:00:02.157]*****************mbedtls_ssl_list_ciphersuites = TLS-PSK-WITH-AES-128-GCM-SHA256
+[00:00:02.158]*****************mbedtls_ssl_list_ciphersuites = TLS-PSK-WITH-AES-128-CBC-SHA256
+[00:00:02.159]*****************mbedtls_ssl_list_ciphersuites = TLS-PSK-WITH-AES-128-CBC-SHA
+[00:00:02.160]*****************mbedtls_ssl_list_ciphersuites = TLS-PSK-WITH-3DES-EDE-CBC-SHA
+[00:00:02.161]  . 3 Setting up the SSL/TLS structure... ok
+[00:00:02.170]-> setting no alarm 
+[00:00:02.310]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:02.385][Info]: [AUDIO_DECODER]__mp3_input read rlen= 272, len= 512
+[00:00:02.405][Info]: [AUDIO_DECODER]__mp3_input read rlen= 0, len= 512
+[00:00:02.406][Info]: [AUDIO_SERVER]audio_dec_wait_stop
+[00:00:02.472][Info]: [AUDIO_SERVER]audio dec end
+[00:00:02.472][Info]: [OS]kill for:mp3_0 succ
+[00:00:02.473]->local_music: AUDIO_SERVER_EVENT_END
+[00:00:02.474][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:02.475][Info]: [AUDIO_SERVER]audio_dec_stop
+[00:00:02.476][Info]: [AUDIO_SERVER]audio_dec_pause
+[00:00:02.530][Info]: [AUDIO_DECODER]===== mp3_decoder_close =====
+[00:00:02.531]vad_enable = 1
+[00:00:02.531]---------aisp_open---------
+[00:00:02.532]jsyan record_config.
+[00:00:02.532]attention: use default product uuid!!!
+[00:00:02.533]-> bt_ble_get_mac
+BD 2A 7D 1D 22 B5 
+[00:00:02.533]aiui_sdk_version:Aug 30 2024-15:43:23,SVN_Ver:5389
+[00:00:02.534]-> param.device_id : 969d2fc1193e1732664bb5221d7d2abd 
+[00:00:02.535]vtn auth appid:ea0cd768
+vtn auth sn :969d2fc1193e1732664bb5221d7d2abd
+[00:00:02.536][Info]: [OS]threat_create:vtn_auth_thread,pid:0x41c8558
+[00:00:02.537]vtn_sdk_version:Oct 23 2024-09:39:33,SVN_Ver:5408
+[00:00:02.538]call initIvw80
+[00:00:02.545][D/IVW] BUILD_INFO:1.0.1160.dynamic(Aug 24 2023,13:46:38)
+  MAX_LAYER_SIZE=9600, USE_CM_SIRANBI=1
+
+[00:00:02.547][D/IVW] offset_mlp:0
+
+[00:00:02.547][D/IVW] layer_size:9616
+
+[00:00:02.548][D/IVW] ---malloc wIvwCreate layer buf:19232
+
+[00:00:02.549][D/IVW] num_filler=83, num_keyword=3
+[00:00:02.549][D/IVW] ---malloc wDecDecoder_init:594
+
+[00:00:02.550][D/IVW] keyword[0]=xiao3 yuan2 xiao3 yuan2, state=36, threshold=978, low=10000, bound=4, subcm=1
+[00:00:02.551][D/IVW] keyword[1]=xiao3 yu3 xiao3 yu3, state=24, threshold=1103, low=10000, bound=4, subcm=1
+[00:00:02.552][D/IVW] keyword[2]=pei4 wang3 mo2 shi4, state=27, threshold=960, low=10000, bound=4, subcm=1
+[00:00:02.554][D/IVW] ---malloc filler(4485e80): 332
+[00:00:02.554][D/IVW] wDecDecoder_init finished with 0
+[00:00:02.555][D/IVW] num_filler_arc=83
+[00:00:02.555][I/IVW] wIvwCreateWithMem finished(0) with 44a9000
+[00:00:02.556]finish create ivw instance.
+[00:00:02.557][D/IVW] ==> wIvwStart 
+[00:00:02.557][D/IVW] wDecStart: pDecoderNet=4498c58, nKeywordNum=3
+[00:00:02.558][D/IVW] ---malloc keyword_start:288
+
+[00:00:02.559][D/IVW] ---malloc arc_init: pActiveToken_=448c9c0, 1152
+
+[00:00:02.559][D/IVW] ---malloc arc_init: pMem_Score=4485fe0, 576
+
+[00:00:02.560][D/IVW] ---malloc arc_init: pActiveToken_=448ce60, 768
+
+[00:00:02.561][D/IVW] ---malloc arc_init: pMem_Score=448d180, 384
+
+[00:00:02.562][D/IVW] ---malloc arc_init: pActiveToken_=4486a60, 864
+
+[00:00:02.563][D/IVW] ---malloc arc_init: pMem_Score=4486de0, 432
+
+[00:00:02.563][D/IVW] ---malloc keyword_start sum arc_init(3):4176-------
+
+[00:00:02.564][D/IVW] wDecStart finished with 0
+[00:00:02.565][D/IVW] <== wIvwStart with 0
+[00:00:02.566][Info]: [OS]threat_create:ivw_thread,pid:0x41c8290
+[00:00:02.567][Info]: [OS]threat_create:esr_queue_task,pid:0x0
+[00:00:02.567][Info]: [AUDIO_SERVER]audio_server_open
+[00:00:02.568][Info]: [OS]task_create: audio_encoder, 0x40418da
+[00:00:02.569][Info]: [SERVER_CORE]app_core request audio_server, owner is app_core
+[00:00:02.570]-->asr_task start====================
+[00:00:02.570][Info]: [AUDIO_SERVER]audio_set_fmt
+[00:00:02.571][Info]: [AUDIO_DEV]It is a adc source.
+[00:00:02.572][Info]: [AUDIO_DEV]adc_open: 16000, mic
+[00:00:02.572][Info]: [AUDIO_ADC]adc_analog_init ok.
+[00:00:02.573]vad_enable = 0
+[00:00:02.573][Info]: [OS]threat_create:my_vad,pid:0x41c95e8
+[00:00:02.574][Info]: [AUDIO_ADC]adc_digital_init: adc_adr = 0x44d13c0, adc_point = 320
+[00:00:02.575][Info]: [AUDIO_ADC]adc_digital_init ok.
+[00:00:02.576][Info]: [AUDIO_ADC]adc open ok.
+[00:00:02.576][Info]: [AUDIO_SERVER]audio_enc_msg_add
+[00:00:02.577][Info]: [AUDIO_DEV]adc_streamon: vloume = 90, sample_rate = 16000
+[00:00:02.578][Info]: [AUDIO_ADC]adc start ok.
+[00:00:02.578][Info]: [AUDIO_SERVER]audio_enc_start: suss
+[00:00:02.579][Info]: [SERVER_CORE]app_core request audio_server, owner is app_core
+[00:00:02.580][Info]: [SERVER_CORE]app_core request audio_server, owner is app_core
+[00:00:02.581]-------------app main end-------------
+[00:00:02.582]net_event=44, mode_type=0, net_ch=0
+[00:00:02.585]music_play_file : mnt/sdfile/app/aupackres/tone/WifiConting.mp3
+[00:00:02.586][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:02.587][Info]: [AUDIO_SERVER]audio_dec_open
+[00:00:02.588][Info]: [AUDIO_SERVER]audo decoder try open : mp3
+[00:00:02.589][Info]: [AUDIO_DECODER]===== mp3_decoder_open =====
+[00:00:02.589][Info]: [AUDIO_DECODER]dcbuf_size = 16080
+[00:00:02.590][Info]: [AUDIO_DECODER]__mp3_get_lslen..: 7725
+[00:00:02.591][Info]: [AUDIO_DECODER]mp3 info.sr = 24000
+[00:00:02.592][Info]: [AUDIO_DECODER]mp3 info.br = 64
+[00:00:02.592][Info]: [AUDIO_DECODER]mp3 info.nch = 1
+[00:00:02.593][Info]: [AUDIO_DECODER]mp3 info.total_time = 1
+[00:00:02.594][Info]: [AUDIO_SERVER]audio_dev_set_fmt: suss  0  
+[00:00:02.595][Info]: [OS]threat_create:mp3_1,pid:0x4487970
+[00:00:02.596][Info]: [AUDIO_SERVER]audio_dec_start: suss
+[00:00:02.596][Info]: [SERVER_CORE]app_core request audio_server, owner is sys_timer
+[00:00:02.597][Info]: [AUDIO_SERVER]audio_dec_start
+[00:00:02.598][Info]: [AUDIO_SERVER]dec list sample_rate : 24000, src : 0
+[00:00:02.620][Info]: [AUDIO_DEV]dac_streamon: sample_rate = 24000 volume = 42
+[00:00:02.620][Info]: [AUDIO_DAC]dac sample rate 24000
+[00:00:02.621][Info]: [AUDIO_DAC]sr = 6
+[00:00:02.650]music_play_file: ok
+[00:00:02.650][Info]: [BT]-+-bt_connction_status_event_handler 0x3
+[00:00:02.651][Info]: [BT]===================BT_STATUS_INIT_OK
+[00:00:02.652]net_event=12, mode_type=0, net_ch=0
+[00:00:03.016]  . 4 Performing the SSL/TLS handshake... ok 
+[00:00:03.017]  . ! The certificate is signed with an unacceptable hash
+[00:00:03.018]get_sys_time : 2032-4-20,12:0:0
+[00:00:03.020]ThisBulkSize : 508 
+[00:00:03.159][SEND FIN]
+[00:00:03.171]net_connected_check ok, __this->net_connect_succ:2
+[00:00:03.172]net_event=2, mode_type=0, net_ch=0
+[00:00:03.172][Info]: [OS]kill for:net_check succ
+[00:00:03.173]NET_EVENT_CONNECTED : 3 
+[00:00:03.174]-> warnning in more file play
+[00:00:03.174][Info]: [OS]threat_create:wifi_pcm_stream,pid:0x0
+[00:00:03.176][Info]: [OS]threat_create:aiui_net_task,pid:0x41c8568
+[00:00:03.177]attention: use default product uuid!!!
+[00:00:03.177]udp_bind: bound to 
+[00:00:03.178]0.0.0.0
+[00:00:03.178], port 58953)
+[00:00:03.178]ifly_aiui_net_task, start...
+[00:00:03.179]-> bt_ble_get_mac
+BD 2A 7D 1D 22 B5 
+[00:00:03.179]udp_bind: bound to 
+[00:00:03.180]0.0.0.0
+[00:00:03.180], port 56818)
+[00:00:03.181]udp_bind: bound to 
+[00:00:03.181]0.0.0.0
+[00:00:03.181], port 58954)
+[00:00:03.281]add sample ch 3000f
+[00:00:03.353]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:03.354][RECV FIN]
+[00:00:03.543]->play_time: 1
+[00:00:03.782][Info]: [AUDIO_DECODER]__mp3_input read rlen= 0, len= 512
+[00:00:03.783][Info]: [AUDIO_SERVER]audio_dec_wait_stop
+[00:00:03.848][Info]: [AUDIO_SERVER]audio dec end
+[00:00:03.849][Info]: [OS]kill for:mp3_1 succ
+[00:00:03.850]->local_music: AUDIO_SERVER_EVENT_END
+[00:00:03.851][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:03.852][Info]: [AUDIO_SERVER]audio_dec_stop
+[00:00:03.852][Info]: [AUDIO_SERVER]audio_dec_pause
+[00:00:03.907][Info]: [AUDIO_DECODER]===== mp3_decoder_close =====
+[00:00:03.908]vad_enable = 1
+[00:00:03.908]vad_enable = 0
+[00:00:03.912]music_play_file : mnt/sdfile/app/aupackres/tone/WifiConSucc.mp3
+[00:00:03.913][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:03.914][Info]: [AUDIO_SERVER]audio_dec_open
+[00:00:03.915][Info]: [AUDIO_SERVER]audo decoder try open : mp3
+[00:00:03.916][Info]: [AUDIO_DECODER]===== mp3_decoder_open =====
+[00:00:03.917][Info]: [AUDIO_DECODER]dcbuf_size = 16080
+[00:00:03.917][Info]: [AUDIO_DECODER]__mp3_get_lslen..: 7293
+[00:00:03.918][Info]: [AUDIO_DECODER]mp3 info.sr = 24000
+[00:00:03.919][Info]: [AUDIO_DECODER]mp3 info.br = 64
+[00:00:03.920][Info]: [AUDIO_DECODER]mp3 info.nch = 1
+[00:00:03.920][Info]: [AUDIO_DECODER]mp3 info.total_time = 1
+[00:00:03.921][Info]: [AUDIO_SERVER]audio_dev_set_fmt: suss  0  
+[00:00:03.922][Info]: [OS]threat_create:mp3_2,pid:0x4487970
+[00:00:03.923][Info]: [AUDIO_SERVER]audio_dec_start: suss
+[00:00:03.923][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:03.925][Info]: [AUDIO_SERVER]audio_dec_start
+[00:00:03.925][Info]: [AUDIO_SERVER]dec list sample_rate : 24000, src : 0
+[00:00:03.950][Info]: [AUDIO_DEV]dac_streamon: sample_rate = 24000 volume = 42
+[00:00:03.951][Info]: [AUDIO_DAC]dac sample rate 24000
+[00:00:03.951][Info]: [AUDIO_DAC]sr = 6
+[00:00:03.980]music_play_file: ok
+[00:00:04.310]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:04.873]->play_time: 1
+[00:00:05.039][Info]: [AUDIO_DECODER]__mp3_input read rlen= 80, len= 512
+[00:00:05.040][Info]: [AUDIO_DECODER]__mp3_input read rlen= 0, len= 512
+[00:00:05.040][Info]: [AUDIO_SERVER]audio_dec_wait_stop
+[00:00:05.105][Info]: [AUDIO_SERVER]audio dec end
+[00:00:05.106][Info]: [OS]kill for:mp3_2 succ
+[00:00:05.106]->local_music: AUDIO_SERVER_EVENT_END
+[00:00:05.107][Info]: [SERVER_CORE]sys_timer request audio_server, owner is sys_timer
+[00:00:05.109][Info]: [AUDIO_SERVER]audio_dec_stop
+[00:00:05.109][Info]: [AUDIO_SERVER]audio_dec_pause
+[00:00:05.163][Info]: [AUDIO_DECODER]===== mp3_decoder_close =====
+[00:00:05.165]vad_enable = 1
+[00:00:05.310]etharp_raw: sending raw ARP[REQ] packet.
+[00:00:05.361]WIFI U= 2 KB/s, D= 24 KB/s
+[00:00:05.362][Info]: [HEAP_MEM]DLMALLOC_STATS:
+[00:00:05.362][Info]: [HEAP_MEM]total: 6294592
+[00:00:05.363][Info]: [HEAP_MEM]left: 2839784
+[00:00:07.929]2026:07:17   08:22:15 
+
+[00:00:07.940]get_NTP_time: 2026-7-17 16:22:15
+[00:00:07.940]-> setting no alarm 
+[00:00:07.941]-> bt_ble_get_mac
+BD 2A 7D 1D 22 B5 
+[00:00:07.941]attention: use default product uuid!!!
+[00:00:07.942]body_dat: 
+{"mac":"B5221D7D2ABD-8FXdSDVy-B1N1-TestBox","alarm":[]}
+[00:00:07.945]  . 1 mbedtls init ... ok 
+[00:00:07.946]udp_bind: bound to 
+[00:00:07.946]0.0.0.0
+[00:00:07.946], port 22834)
+[00:00:07.998]WL_RX: FifoOverflowCount= 2120
+[00:00:08.117]CHANGE DNS_SERVERS[1->0[0x72727272][0x10aa8c0]

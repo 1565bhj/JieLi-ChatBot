@@ -49,7 +49,7 @@ extern G_SENSOR_INTERFACE gsensor_dev_end[];
 //G_SENSOR_INTERFACE gsensor_dev_end[];
 
 #define REGISTER_GRAVITY_SENSOR(gSensor) \
-    static G_SENSOR_INTERFACE gSensor SEC_USED(.gsensor_dev) = {
+    static G_SENSOR_INTERFACE gSensor SEC_USED(.gsensor_dev) = 
 
 
 #define list_for_each_gsensor(c) \

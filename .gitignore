@@ -87,5 +87,6 @@ apps/wifi_tuya_iot/readme.txt
 apps/wifi_tuya_iot/tuya/.vscode/settings.json
 apps/wifi_tuya_iot/tuya/sdk/include/lwip/apps/FILES
 apps/wifi_story_machine/board/wl82/obj
+apps/wifi_story_machine/log.txt"
 lib/system/lvgl_v8/prj/obj
 skills/

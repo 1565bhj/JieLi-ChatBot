@@ -14,6 +14,7 @@
 #include "server/ai_server.h"
 #include "ai_uart_ctrol.h"
 #include "qyai_config.h"
+#include "key/key_driver.h"
 
 #if defined CONFIG_ASR_ALGORITHM_ENABLE
 
@@ -566,7 +567,7 @@ static int ai_speaker_key_event_handler(struct key_event *key)
     if (!alarm_music_play_stop() && (key->value != KEY_SUPSPEND && key->value != KEY_RESUM && key->value != KEY_POWER)) {
         return true;//闹钟在响，按键失效
     }
-    printf("->key->action = %d ,key->value = %d \n", key->action, key->value);
+    printf("[ai_speaker]->key->action = %d ,key->value = %d \n", key->action, key->value);
     switch (key->action) {
     case KEY_EVENT_UP:
         ai_speaker_key_hand_up(key);
@@ -1325,16 +1326,20 @@ done:
 
 static int ai_speaker_event_handler(struct application *app, struct sys_event *event)
 {
+    struct key_event *key;
     switch (event->type) {
     case SYS_KEY_EVENT:
-        return ai_speaker_key_event_handler((struct key_event *)event->payload);
+        key = (struct key_event *)event->payload;
+        if(key->type == KEY_DRIVER_TYPE_IR) {
+            return false;
+        }
+        return ai_speaker_key_event_handler(key);
     case SYS_NET_EVENT:
         return ai_net_event_handler((struct net_event *)event->payload);
     case SYS_DEVICE_EVENT:
         return ai_speaker_device_event_handler(event);
 #ifdef CONFIG_BT_ENABLE
     case SYS_BT_EVENT:
-        
         return app_music_bt_event_handler(event);
 #endif
     default:

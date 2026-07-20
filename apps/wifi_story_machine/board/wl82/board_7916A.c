@@ -7,7 +7,7 @@
 #include "device/iic.h"
 #include "server/audio_dev.h"
 #include "asm/includes.h"
-//#include "gSensor_manage.h"
+#include "gSensor_manage.h"
 
 #if TCFG_USB_SLAVE_ENABLE || TCFG_USB_HOST_ENABLE
 #include "otg.h"
@@ -104,9 +104,9 @@ UART1_PLATFORM_DATA_BEGIN(uart1_data)
 #else
     .output_channel = OUTPUT_CHANNEL0,
 #endif
-    //.tx_pin = TCFG_DEBUG_PORT,//IO_PORT_USB_DPA
-    //.tx_pin = IO_PORT_USB_DPA,//IO_PORT_USB_DPA
-    .tx_pin = -1,
+    .tx_pin = TCFG_DEBUG_PORT,//IO_PORT_USB_DPA
+    // .tx_pin = IO_PORT_USB_DPA,//IO_PORT_USB_DPA
+    // .tx_pin = -1,
     .rx_pin = -1,//IO_PORT_USB_DMA
     .max_continue_recv_cnt = 1024,
     .idle_sys_clk_cnt = 500000,
@@ -200,7 +200,7 @@ SW_IIC_PLATFORM_DATA_END()
 #if TCFG_IRKEY_ENABLE
 const struct irkey_platform_data irkey_data = {
     .enable = 1,
-    .port = IO_PORTA_09,
+    .port = IO_PORTH_03,
 };
 #endif
 
@@ -373,12 +373,12 @@ SPI1_PLATFORM_DATA_END()
 #ifndef SPI2_ATTR_SET
 #define SPI2_ATTR_SET   SPI_SCLK_H_UPL_SMPH | SPI_UNIDIR_MODE //单向单线
 #endif
-SPI2_PLATFORM_DATA_BEGIN(spi2_data)
-    .clk    = SPI2_CLOCK_HZ,
-    .mode   = SPI_STD_MODE,
-    .port   = 'A',
-    .attr	= SPI2_ATTR_SET,
-SPI2_PLATFORM_DATA_END()
+// SPI2_PLATFORM_DATA_BEGIN(spi2_data)
+//     .clk    = SPI2_CLOCK_HZ,
+//     .mode   = SPI_STD_MODE,
+//     .port   = 'A',
+//     .attr	= SPI2_ATTR_SET,
+// SPI2_PLATFORM_DATA_END()
 
 
 #ifdef CONFIG_UI_ENABLE
@@ -425,10 +425,10 @@ static const struct pap_info pap_data = {
 static const struct ui_lcd_platform_data pdata = {
 #if TCFG_LCD_ST7735S_ENABLE || TCFG_LCD_ST7789P3_ENABLE || TCFG_LCD_ST77912_ENABLE || TCFG_LCD_GC9D01_ENABLE || TCFG_LCD_ST7735P3_ENABLE || TCFG_LCD_JD9853_ENABLE
     .spi_id  = "spi1",
-    .rs_pin  = IO_PORTC_06,
-    .te_pin  = IO_PORTC_02,
-    .rst_pin = IO_PORTC_05,
-    .cs_pin  = IO_PORTC_07,
+    .rs_pin  = IO_PORTC_00,
+    .te_pin  = IO_PORTC_03,
+    .rst_pin = IO_PORTC_02,
+    .cs_pin  = IO_PORTH_07,
 #ifdef CONFIG_UI_TOW_EYE
     .cs1_pin = IO_PORTC_01,
 #endif
@@ -687,6 +687,16 @@ PWM_PLATFORM_DATA_BEGIN(pwm_data1)
 PWM_PLATFORM_DATA_END()
 #endif
 
+#ifdef TCFG_SERVO_ENABLE
+PWM_PLATFORM_DATA_BEGIN(servo_pwm_data)
+    .port   = SERVO_PWM_PORT,
+    .pwm_ch = SERVO_PWM_CH,
+    .freq   = 50,         // 舵机 50Hz, 20ms 周期
+    .duty   = 7.5,        // 7.50% = 1.5ms，中位
+    .point_bit = 2,       // 低频时用 2 位小数精度
+PWM_PLATFORM_DATA_END()
+#endif
+
 #if TCFG_USB_SLAVE_ENABLE || TCFG_USB_HOST_ENABLE
 static const struct otg_dev_data otg_data = {
 #if defined CONFIG_MP_TEST_ENABLE
@@ -825,6 +835,9 @@ REGISTER_DEVICES(device_table) = {
 #if !TCFG_LCD_ILI9341_ENABLE && !TCFG_LCD_ILI9481_ENABLE
     //{ "pwm_led",&pwm_led_ops,  (void *)&pwm_led_data},
 #endif
+#ifdef TCFG_SERVO_ENABLE
+    { "servo_pwm", &pwm_dev_ops, (void *)&servo_pwm_data },
+#endif
 
     { "iic0",  &iic_dev_ops, (void *)&sw_iic0_data },
     { "iic1",  &iic_dev_ops, (void *)&sw_iic1_data },
@@ -870,7 +883,7 @@ REGISTER_DEVICES(device_table) = {
 #endif
 
     { "spi1", &spi_dev_ops, (void *)&spi1_data },
-    { "spi2", &spi_dev_ops, (void *)&spi2_data },
+    //{ "spi2", &spi_dev_ops, (void *)&spi2_data },
 
     {"rtc", &rtc_dev_ops, NULL},
 

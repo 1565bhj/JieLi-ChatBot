@@ -32,7 +32,7 @@ static void pwm_test(void)
 
 #if 1
     /*2.write and read 配置占空比*/
-    pwm.pwm_ch = PWMCH0_H | PWMCH0_L;//该通道需在board.c中有定义，若没有则需先PWM_ADD_CHANNEL,下面有例子。
+    pwm.pwm_ch = PWMCH2_H | PWMCH2_L;//该通道需在board.c中有定义，若没有则需先PWM_ADD_CHANNEL,下面有例子。
     pwm.duty = 80;
     dev_write(pwm_dev_handl, (void *)&pwm, 0);
     ret = dev_read(pwm_dev_handl, (void *)&pwm, 0);//dev_read函数返回值为占空比（不带小数点）0-100
@@ -69,45 +69,45 @@ static void pwm_test(void)
     dev_ioctl(pwm_dev_handl, PWM_SET_DUTY, (u32)&pwm);//设置占空比
     os_time_dly(200);
 
-    /*5.中途可以添加TIMER2 PWM 任意IO,添加通道后关闭前必须删除 */
-    printf("----timer add channel-------\n\n");
-    pwm.pwm_ch = PWM_TIMER2_OPCH2;
-    pwm.port = IO_PORTA_07;
-    pwm.duty = 10;
-    pwm.freq = 1500;
-    dev_ioctl(pwm_dev_handl, PWM_ADD_CHANNEL, (u32)&pwm);//中途添加通道，可以是PWMCHx_H/L和PWM_TIMER2_OPCH2或PWM_TIMER3_OPCH3
+    // /*5.中途可以添加TIMER2 PWM 任意IO,添加通道后关闭前必须删除 */
+    // printf("----timer add channel-------\n\n");
+    // pwm.pwm_ch = PWM_TIMER2_OPCH2;
+    // pwm.port = IO_PORTA_07;
+    // pwm.duty = 10;
+    // pwm.freq = 1500;
+    // dev_ioctl(pwm_dev_handl, PWM_ADD_CHANNEL, (u32)&pwm);//中途添加通道，可以是PWMCHx_H/L和PWM_TIMER2_OPCH2或PWM_TIMER3_OPCH3
 
-    pwm.duty = 80;
-    dev_write(pwm_dev_handl, (void *)&pwm, 0);//dev_write也可以设置占空比
-    ret = dev_read(pwm_dev_handl, (void *)&pwm, 0);//读取占空比
-    printf("pwm0 read duty : %d \n", ret);
+    // pwm.duty = 80;
+    // dev_write(pwm_dev_handl, (void *)&pwm, 0);//dev_write也可以设置占空比
+    // ret = dev_read(pwm_dev_handl, (void *)&pwm, 0);//读取占空比
+    // printf("pwm0 read duty : %d \n", ret);
 
-    os_time_dly(200);
+    // os_time_dly(200);
 
 
-    printf("----timer ioctl pwm.pwm_ch = 0x%x-------\n\n", pwm.pwm_ch);
-    /*6.ioctl控制PWM暂停、运行、正反向,调用1次ioctl只支持1组通道PWMCH_H/L控制*/
-    os_time_dly(300);
-    dev_ioctl(pwm_dev_handl, PWM_STOP, (u32)&pwm);//PWM停止
+    // printf("----timer ioctl pwm.pwm_ch = 0x%x-------\n\n", pwm.pwm_ch);
+    // /*6.ioctl控制PWM暂停、运行、正反向,调用1次ioctl只支持1组通道PWMCH_H/L控制*/
+    // os_time_dly(300);
+    // dev_ioctl(pwm_dev_handl, PWM_STOP, (u32)&pwm);//PWM停止
 
-    os_time_dly(200);
-    dev_ioctl(pwm_dev_handl, PWM_RUN, (u32)&pwm);//PWM运行
-    os_time_dly(200);
+    // os_time_dly(200);
+    // dev_ioctl(pwm_dev_handl, PWM_RUN, (u32)&pwm);//PWM运行
+    // os_time_dly(200);
 
-    pwm.freq = 2000;
-    pwm.duty = 20;
-    printf("----timer set freq-------\n\n");
-    dev_ioctl(pwm_dev_handl, PWM_SET_FREQ, (u32)&pwm);//设置频率
-    os_time_dly(200);
-    pwm.duty = 50;
-    dev_ioctl(pwm_dev_handl, PWM_SET_DUTY, (u32)&pwm);//设置占空比
-    os_time_dly(200);
-    pwm.duty = 80;
-    dev_ioctl(pwm_dev_handl, PWM_SET_DUTY, (u32)&pwm);//设置占空比
-    os_time_dly(200);
+    // pwm.freq = 2000;
+    // pwm.duty = 20;
+    // printf("----timer set freq-------\n\n");
+    // dev_ioctl(pwm_dev_handl, PWM_SET_FREQ, (u32)&pwm);//设置频率
+    // os_time_dly(200);
+    // pwm.duty = 50;
+    // dev_ioctl(pwm_dev_handl, PWM_SET_DUTY, (u32)&pwm);//设置占空比
+    // os_time_dly(200);
+    // pwm.duty = 80;
+    // dev_ioctl(pwm_dev_handl, PWM_SET_DUTY, (u32)&pwm);//设置占空比
+    // os_time_dly(200);
 
     /*7.关闭前把添加通道删除,*/
-    dev_ioctl(pwm_dev_handl, PWM_REMOV_CHANNEL, (u32)&pwm);
+    // dev_ioctl(pwm_dev_handl, PWM_REMOV_CHANNEL, (u32)&pwm);
 #endif
     dev_close(pwm_dev_handl);
     printf("pwm test end\n\n");

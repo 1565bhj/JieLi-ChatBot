@@ -3,6 +3,7 @@
 #include "asm/pap.h"
 #include "lcd_drive.h"
 #include "lcd_config.h"
+#include "gpio.h"
 
 /*  GC9D01驱动说明 该驱动测试时使用的 wl80 79系列
  *  由于该IC推屏能力不够强 推屏的帧数较低 大概在25帧左右
@@ -408,6 +409,7 @@ void GC9D01_test(void)
 
 static int GC9D01_init(void)
 {
+    gpio_direction_output(IO_PORTH_02, 1);
     printf("LCD_GC9D01 init_start\n");
     GC9D01_reset();
     GC9D01_init_code(NULL, 0);

@@ -45,6 +45,11 @@
 #define     KEY_8               38
 #define     KEY_9               39
 
+#define     KEY_IR0             40
+#define     KEY_IR1             41
+#define     KEY_IR2             42
+#define     KEY_IR3             43
+
 #define     NO_KEY              255
 
 #define     KEY_K1              13

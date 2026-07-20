@@ -45,7 +45,7 @@ UART0_PLATFORM_DATA_BEGIN(uart0_data)
 #else
     .port = PORTA_5_6,
     .tx_pin = IO_PORTA_05,//IO_PORT_USB_DPA,
-    .rx_pin = IO_PORTA_06,//IO_PORT_USB_DMA,
+    .rx_pin = -1,//IO_PORT_USB_DMA,
 #endif
     .max_continue_recv_cnt = 1024,
     .idle_sys_clk_cnt = 500000,
@@ -182,7 +182,7 @@ SW_IIC_PLATFORM_DATA_END()
 #if TCFG_IRKEY_ENABLE
 const struct irkey_platform_data irkey_data = {
     .enable = 1,
-    .port = IO_PORTA_09,
+    .port = IO_PORTC_07,
 };
 #endif
 
@@ -400,19 +400,19 @@ static const struct pap_info pap_data = {
 #if TCFG_LCD_BL_PWM_PORT
 #define LCD_BL_PORT TCFG_LCD_BL_PWM_PORT
 #else
-#define LCD_BL_PORT IO_PORTC_07
+#define LCD_BL_PORT IO_PORTB_01
 #endif
 static const struct ui_lcd_platform_data pdata = {
 #if TCFG_LCD_ST7735S_ENABLE || TCFG_LCD_ST7789P3_ENABLE || TCFG_LCD_ST77912_ENABLE || TCFG_LCD_GC9D01_ENABLE || TCFG_LCD_ST7735P3_ENABLE || TCFG_LCD_JD9853_ENABLE
     .spi_id  = "spi1",
     .rs_pin  = IO_PORTC_00,
 #if USE_LCD_TE
-    .te_pin  = IO_PORTC_06,//IO_PORTH_07,
+    .te_pin  = IO_PORTC_06,
 #endif
     .rst_pin = IO_PORTC_02,
-    .cs_pin  = IO_PORTC_01,//IO_PORTH_07,
+    .cs_pin  = IO_PORTC_01,
 #ifdef CONFIG_UI_TOW_EYE
-    .cs1_pin = IO_PORTC_01,
+    .cs1_pin = IO_PORTC_08,
 #endif
     .bl_pin  = LCD_BL_PORT,
     .lcd_if  = LCD_SPI,//屏幕接口类型还有 PAP , SPI
@@ -643,6 +643,16 @@ PWM_PLATFORM_DATA_BEGIN(pwm_data1)
 PWM_PLATFORM_DATA_END()
 #endif
 
+#ifdef TCFG_SERVO_ENABLE
+PWM_PLATFORM_DATA_BEGIN(servo_pwm_data)
+    .port   = SERVO_PWM_PORT,
+    .pwm_ch = SERVO_PWM_CH,
+    .freq   = 50,         // 舵机 50Hz, 20ms 周期
+    .duty   = 7.5,        // 7.50% = 1.5ms，中位
+    .point_bit = 2,       // 低频时用 2 位小数精度
+PWM_PLATFORM_DATA_END()
+#endif
+
 #if TCFG_USB_SLAVE_ENABLE || TCFG_USB_HOST_ENABLE
 static const struct otg_dev_data otg_data = {
 #if defined CONFIG_MP_TEST_ENABLE
@@ -758,6 +768,9 @@ REGISTER_DEVICES(device_table) = {
 #endif
 #if !TCFG_LCD_ILI9341_ENABLE && !TCFG_LCD_ILI9481_ENABLE
     //{ "pwm_led",&pwm_led_ops,  (void *)&pwm_led_data},
+#endif
+#ifdef TCFG_SERVO_ENABLE
+    { "servo_pwm", &pwm_dev_ops, (void *)&servo_pwm_data },
 #endif
 
     { "iic0",  &iic_dev_ops, (void *)&sw_iic0_data },

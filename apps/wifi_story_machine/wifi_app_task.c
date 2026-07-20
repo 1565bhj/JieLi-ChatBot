@@ -101,6 +101,25 @@ static void soft_ap_set_lan_setting_info(void)
     net_set_lan_info_ext(&lan_setting_info, WIFI_NETIF);
 }
 
+static void wifi_log_sta_ip_info(void)
+{
+    char ip_addr[16] = {0};
+    char gw_addr[16] = {0};
+    struct netif_info netif_info = {0};
+
+    Get_IPAddress(WIFI_NETIF, ip_addr);
+    get_gateway(WIFI_NETIF, gw_addr);
+    lwip_get_netif_info(1, &netif_info);
+
+    printf("***WIFI DHCP SUCC, IP:[%s] , GW:[%s] , NETMASK:[%d.%d.%d.%d]\r\n",
+           ip_addr,
+           gw_addr,
+           (u8)(netif_info.netmask >> 0),
+           (u8)(netif_info.netmask >> 8),
+           (u8)(netif_info.netmask >> 16),
+           (u8)(netif_info.netmask >> 24));
+}
+
 static void wifi_app_timer_func(void *p)
 {
     if (wifi_is_on()) {
@@ -708,6 +727,7 @@ static int wifi_event_callback(void *network_ctx, enum WIFI_EVENT event)
 
     case WIFI_EVENT_STA_NETWORK_STACK_DHCP_SUCC:
         puts("|network_user_callback->WIFI_EVENT_STA_NETWPRK_STACK_DHCP_SUCC\n");
+        wifi_log_sta_ip_info();
         qyai_net_interface_set(0);
 #if defined CONFIG_MP_TEST_ENABLE
         if (__this->rf_test_mode == WIFI_STA_TEST_MODE) {

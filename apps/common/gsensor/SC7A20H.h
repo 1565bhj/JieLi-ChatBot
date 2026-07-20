@@ -14,6 +14,9 @@
 #define SC7A20H_WHO_AM_I         0x0F
 #define SC7A20H_VERSION          0x70
 
+// 模式控制寄存器
+#define SC7A20H_MODE_CTRL        0x1F
+
 // 控制寄存器
 #define SC7A20H_CTRL_REG1        0x20
 #define SC7A20H_CTRL_REG2        0x21
@@ -42,6 +45,13 @@
 #define SC7A20H_INT1_THS         0x32
 #define SC7A20H_INT1_DURATION    0x33
 
+//复位寄存器
+#define SOFT_RESET               0x68
+
+#define SC7A20H_POSTURE_UNKNOWN  0
+#define SC7A20H_POSTURE_FLAT     1
+#define SC7A20H_POSTURE_SIDE     2
+
 // 函数声明
 extern unsigned char sc7a20h_sensor_command(unsigned char register_address, unsigned char function_command);
 extern unsigned char sc7a20h_sensor_get_data(unsigned char register_address);
@@ -57,5 +67,8 @@ extern void sc7a20h_get_acceleration(unsigned int cnt);
 extern int sc7a20h_prepare_power_off(void);
 extern unsigned short get_total_water_intake_ml(void);
 extern void reset_total_water_intake_ml(void);
+extern int gsensor_is_device_tapping(void);
+extern int gsensor_is_device_falling(void);
+extern int gsensor_get_device_posture(void);
 
 #endif // _SC7A20H_H

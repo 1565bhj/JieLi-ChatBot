@@ -39,6 +39,26 @@ static unsigned int g_last_report_time = 0;
 
 // 加速阈值
 #define SHAKE_THRESHOLD             0.02 //检测摇换最低角度阈值
+#define TAP_DELTA_THRESHOLD         1.20f
+#define TAP_TOTAL_MIN_G             4.00f
+#define TAP_TOTAL_MAX_G             8.00f
+#define TAP_COOLDOWN_CNT            20
+#define FREEFALL_LOW_G_RATIO        0.45f
+#define FALL_IMPACT_G_RATIO         1.80f
+#define FALL_IMPACT_DELTA_G         0.60f
+#define FALL_BASELINE_INIT_CNT      20
+#define FALL_BASELINE_MIN_G         0.08f
+#define FALL_BASELINE_ALPHA         0.03f
+#define FREEFALL_MIN_CNT            2
+#define FALL_IMPACT_TIMEOUT_CNT     20
+#define FALL_COOLDOWN_CNT           60
+#define POSTURE_TOTAL_MIN_G         0.65f
+#define POSTURE_TOTAL_MAX_G         1.35f
+#define POSTURE_FLAT_Z_MIN_G        0.78f
+#define POSTURE_SIDE_AXIS_MIN_G     0.78f
+#define POSTURE_OTHER_AXIS_MAX_G    0.65f
+#define POSTURE_STABLE_CNT          12
+#define MOTION_EVENT_HOLD_CNT       20
 
 // 用于存储当前传感器的灵敏度设置
 static unsigned char g_current_sc7a20h_sensitivity = G_SENSITY_LOW;
@@ -107,6 +127,11 @@ extern bool music_start;
 static bool die_shake_flag = false;
 static bool draw_lots_shake_flag = false;
 static bool draw_lots_executed = false;
+static bool tap_detected_flag = false;
+static bool fall_detected_flag = false;
+static unsigned char tap_hold_cnt = 0;
+static unsigned char fall_hold_cnt = 0;
+static int current_posture_state = SC7A20H_POSTURE_UNKNOWN;
 
 void qian_mode_sc7a20h_enable(int enbable)
 {
@@ -326,6 +351,133 @@ bool detect_shaking(sample_data_type *buf, Acceleration *current, float val)
     }
     return false;
 }
+bool detect_tapping(sample_data_type *buf, Acceleration *current, float val)
+{
+    static unsigned char cooldown = 0;
+
+    add_sample(buf, current);
+    if (buf->count < 2) {
+        return false;
+    }
+
+    if (cooldown) {
+        cooldown--;
+        return false;
+    }
+
+    Acceleration *prev = &buf->buffer[buf->count - 2];
+    float dx = current->x - prev->x;
+    float dy = current->y - prev->y;
+    float dz = current->z - prev->z;
+    float delta = calculate_total_acceleration(dx, dy, dz);
+    float total = calculate_total_acceleration(current->x, current->y, current->z);
+
+    if (delta > val && total >= TAP_TOTAL_MIN_G && total <= TAP_TOTAL_MAX_G) {
+        cooldown = TAP_COOLDOWN_CNT;
+        return true;
+    }
+
+    return false;
+}
+
+bool detect_falling(sample_data_type *buf, Acceleration *current, float val)
+{
+    static unsigned char low_g_cnt = 0;
+    static unsigned char impact_wait_cnt = 0;
+    static unsigned char cooldown = 0;
+    static unsigned char baseline_cnt = 0;
+    static float baseline_sum = 0.0f;
+    static float gravity_baseline = 0.0f;
+    float total = calculate_total_acceleration(current->x, current->y, current->z);
+    float low_g_threshold;
+    float impact_threshold;
+    float impact_delta_threshold;
+
+    add_sample(buf, current);
+
+    if (baseline_cnt < FALL_BASELINE_INIT_CNT) {
+        baseline_sum += total;
+        baseline_cnt++;
+        if (baseline_cnt >= FALL_BASELINE_INIT_CNT) {
+            gravity_baseline = baseline_sum / baseline_cnt;
+            if (gravity_baseline < FALL_BASELINE_MIN_G) {
+                gravity_baseline = FALL_BASELINE_MIN_G;
+            }
+            printf("Fall baseline ready: %.3f\r\n", gravity_baseline);
+        }
+        return false;
+    }
+
+    if (cooldown) {
+        cooldown--;
+        return false;
+    }
+
+    low_g_threshold = gravity_baseline * val;
+    impact_delta_threshold = gravity_baseline + FALL_IMPACT_DELTA_G;
+    impact_threshold = gravity_baseline * FALL_IMPACT_G_RATIO;
+    if (impact_threshold < impact_delta_threshold) {
+        impact_threshold = impact_delta_threshold;
+    }
+
+    if (total < low_g_threshold) {
+        if (low_g_cnt < 0xff) {
+            low_g_cnt++;
+        }
+        if (low_g_cnt >= FREEFALL_MIN_CNT) {
+            impact_wait_cnt = FALL_IMPACT_TIMEOUT_CNT;
+        }
+        return false;
+    }
+
+    if (impact_wait_cnt) {
+        impact_wait_cnt--;
+        if (total >= impact_threshold) {
+            low_g_cnt = 0;
+            impact_wait_cnt = 0;
+            cooldown = FALL_COOLDOWN_CNT;
+            return true;
+        }
+    } else {
+        low_g_cnt = 0;
+        if (total > gravity_baseline * 0.70f && total < gravity_baseline * 1.30f) {
+            gravity_baseline = gravity_baseline * (1.0f - FALL_BASELINE_ALPHA) +
+                               total * FALL_BASELINE_ALPHA;
+        }
+    }
+
+    return false;
+}
+
+int detect_posture(Acceleration *current)
+{
+    float abs_x = fabs(current->x);
+    float abs_y = fabs(current->y);
+    float abs_z = fabs(current->z);
+    float total = calculate_total_acceleration(current->x, current->y, current->z);
+
+    if (total < POSTURE_TOTAL_MIN_G || total > POSTURE_TOTAL_MAX_G) {
+        return SC7A20H_POSTURE_UNKNOWN;
+    }
+
+    if (abs_z >= POSTURE_FLAT_Z_MIN_G &&
+        abs_x <= POSTURE_OTHER_AXIS_MAX_G &&
+        abs_y <= POSTURE_OTHER_AXIS_MAX_G) {
+        return SC7A20H_POSTURE_FLAT;
+    }
+
+    if ((abs_x >= POSTURE_SIDE_AXIS_MIN_G &&
+         abs_y <= POSTURE_OTHER_AXIS_MAX_G &&
+         abs_z <= POSTURE_OTHER_AXIS_MAX_G) ||
+        (abs_y >= POSTURE_SIDE_AXIS_MIN_G &&
+         abs_x <= POSTURE_OTHER_AXIS_MAX_G &&
+         abs_z <= POSTURE_OTHER_AXIS_MAX_G)) {
+        return SC7A20H_POSTURE_SIDE;
+    }
+
+    return SC7A20H_POSTURE_UNKNOWN;
+}
+
 // 修改sc7a20h_get_acceleration函数中的相关代码
 void sc7a20h_get_acceleration(unsigned int cnt)
 {
@@ -380,6 +532,18 @@ void sc7a20h_get_acceleration(unsigned int cnt)
         return;
     }
 
+    if (tap_hold_cnt) {
+        tap_hold_cnt--;
+    } else {
+        tap_detected_flag = false;
+    }
+
+    if (fall_hold_cnt) {
+        fall_hold_cnt--;
+    } else {
+        fall_detected_flag = false;
+    }
+
     extern bool is_any_music_playing(void);
 
     // 只有不在对话页面时才更新摇晃标志
@@ -393,22 +557,22 @@ void sc7a20h_get_acceleration(unsigned int cnt)
     float resolution;
     switch (g_current_sc7a20h_sensitivity) {
     case G_SENSITY_HIGH:
-        resolution = 4096.0f; // ±2g，4096 LSB/g
+        resolution = 1024.0f; // ±2g
         break;
     case G_SENSITY_MEDIUM:
-        resolution = 2048.0f; // ±4g
+        resolution = 512.0f; // ±4g
         break;
     case G_SENSITY_LOW:
-        resolution = 512.0f;  // ±16g
+        resolution = 128.0f;  // ±16g
         break;
     default:
-        resolution = 4096.0f;
+        resolution = 1024.0f;
     }
 
     float acc_x_g = (float)acc_x / resolution * 1.0;
     float acc_y_g = (float)acc_y / resolution * 1.0;
     float acc_z_g = (float)acc_z / resolution * 1.0;
-
+    //printf("acc_x_g %f, acc_y_g %f,acc_z_g %f  --------------------\r\n", acc_x_g, acc_y_g, acc_z_g);
     // 计算倾斜角度
     float pitch_x = atan2(acc_y_g, sqrt(acc_x_g * acc_x_g + acc_z_g * acc_z_g)) * 180 / M_PI;
     float roll_y  = atan2(acc_x_g, sqrt(acc_y_g * acc_y_g + acc_z_g * acc_z_g)) * 180 / M_PI;
@@ -428,6 +592,53 @@ void sc7a20h_get_acceleration(unsigned int cnt)
         .y = acc_y_g,
         .z = acc_z_g
     };
+    Acceleration raw_current ALIGNED(4) = current;
+    static sample_data_type tap_sample_data ALIGNED(4) = {0};
+    static sample_data_type fall_sample_data ALIGNED(4) = {0};
+    static unsigned char posture_same_cnt = 0;
+    static int last_posture_state = SC7A20H_POSTURE_UNKNOWN;
+
+    if (detect_tapping(&tap_sample_data, &raw_current, TAP_DELTA_THRESHOLD)) {
+        tap_detected_flag = true;
+        tap_hold_cnt = MOTION_EVENT_HOLD_CNT;
+        printf("Tap detected: x=%.2f y=%.2f z=%.2f\r\n", acc_x_g, acc_y_g, acc_z_g);
+#ifdef CONFIG_UI_PLAY_EMOJI
+        mp3_buf_play_res_file("Hit.mp3");
+        play_face_emoji(AI_UART_CMD_EMOJI_AMAZE);
+#endif
+    }
+
+    if (detect_falling(&fall_sample_data, &raw_current, FREEFALL_LOW_G_RATIO)) {
+        fall_detected_flag = true;
+        fall_hold_cnt = MOTION_EVENT_HOLD_CNT;
+        printf("Fall detected: x=%.2f y=%.2f z=%.2f\r\n", acc_x_g, acc_y_g, acc_z_g);
+#ifdef CONFIG_UI_PLAY_EMOJI
+        mp3_buf_play_res_file("Fall.mp3");
+        play_face_emoji(AI_UART_CMD_EMOJI_FEAR);
+#endif
+    }
+
+    int posture_state = detect_posture(&raw_current);
+    if (posture_state == last_posture_state) {
+        if (posture_same_cnt < 0xff) {
+            posture_same_cnt++;
+        }
+    } else {
+        last_posture_state = posture_state;
+        posture_same_cnt = 1;
+    }
+
+    if (posture_same_cnt >= POSTURE_STABLE_CNT &&
+        current_posture_state != posture_state) {
+        current_posture_state = posture_state;
+        if (current_posture_state == SC7A20H_POSTURE_FLAT) {
+            printf("Posture flat: pitch=%.2f roll=%.2f theta=%.2f\r\n", pitch_x, roll_y, theta_z);
+        } else if (current_posture_state == SC7A20H_POSTURE_SIDE) {
+            printf("Posture side: pitch=%.2f roll=%.2f theta=%.2f\r\n", pitch_x, roll_y, theta_z);
+        } else {
+            printf("Posture unknown: pitch=%.2f roll=%.2f theta=%.2f\r\n", pitch_x, roll_y, theta_z);
+        }
+    }
 #define SHAKE_CNT   3
     if (detect_shaking(&sample_data, &current, SHAKE_THRESHOLD)) {
         shake_begin_flag++;
@@ -469,6 +680,7 @@ noshake:
             // 如果在骰子游戏页面，不播放表情29
             if (!keyworld_start) {
 #ifdef CONFIG_UI_PLAY_EMOJI
+                mp3_buf_play_res_file("Shake.mp3");
                 play_face_emoji(AI_UART_CMD_EMOJI_DIZZY);
                 os_time_dly(100);
 #endif
@@ -504,7 +716,7 @@ static void sc7a20h_sensor_task(void *p)
     os_time_dly(100); // 延迟10秒
     sc7a20h_config();
     // 配置为高灵敏度模式
-    sc7a20h_resolution_range(G_SENSITY_MEDIUM);
+    sc7a20h_resolution_range(G_SENSITY_MEDIUM); // ±4g，高字节在高地址
 
     // 任务启动时首先执行一次日期检查和重置
     // 但先等待系统充分初始化，确保时间已经更新
@@ -618,14 +830,20 @@ unsigned char sc7a20h_config(void)
     sl_delay(5);
 
     // 软复位传感器
-    sc7a20h_sensor_command(SC7A20H_CTRL_REG2, 0x40); // 软复位
+    sc7a20h_sensor_command(SOFT_RESET, 0xA5); // 软复位
     sl_delay(20);
 
     // 基本配置 - 正常模式
     sc7a20h_sensor_command(SC7A20H_CTRL_REG1, 0x57); // 开启XYZ轴，100Hz刷新率
-//    sc7a20h_sensor_command(SC7A20H_CTRL_REG2, 0x00); // 开启XYZ轴，100Hz刷新率
-//     sc7a20h_sensor_command(SC7A20H_CTRL_REG4, 0x88); // ±2g，高字节在高地址
-    sc7a20h_sensor_command(SC7A20H_CTRL_REG4, 0x00); // ±2g，高字节在高地址
+    sc7a20h_sensor_command(SC7A20H_CTRL_REG2, 0x40); // 高通滤波器数据选择
+    // sc7a20h_sensor_command(SC7A20H_CTRL_REG3, 0x40); // 开启 AOI1 中断在 INT1
+//     sc7a20h_sensor_command(SC7A20H_CTRL_REG4, 0x00); // ±2g，高字节在高地址
+    sc7a20h_sensor_command(SC7A20H_CTRL_REG4, 0x10); // ±4g，高字节在高地址
+    // sc7a20h_sensor_command(SC7A20H_CTRL_REG5, 0x08); // 中断锁存
+    // sc7a20h_sensor_command(SC7A20H_INT1_CFG, 0x95); // XYZ轴中断检查使能
+    // sc7a20h_sensor_command(SC7A20H_INT1_THS, 0x0A); // 配置触发中断阈值
+    // sc7a20h_sensor_command(SC7A20H_INT1_DURATION, 0x04); // 配置触发中断时间阈值
+
     // 设置低通滤波 - 50Hz截止频率
     sc7a20h_set_lpf_cutoff(LPF_CUTOFF_50HZ);
 
@@ -683,6 +901,21 @@ bool gsensor_is_device_shaking(void)
     return die_shake_flag;
 }
 
+int gsensor_is_device_tapping(void)
+{
+    return tap_detected_flag ? 1 : 0;
+}
+
+int gsensor_is_device_falling(void)
+{
+    return fall_detected_flag ? 1 : 0;
+}
+
+int gsensor_get_device_posture(void)
+{
+    return current_posture_state;
+}
+
 
 // 注册传感器操作接口
 _G_SENSOR_INTERFACE sc7a20h_ops = {
@@ -692,7 +925,7 @@ _G_SENSOR_INTERFACE sc7a20h_ops = {
     .gravity_sensor_sensity  = sc7a20h_gravity_sensity,
 };
 
-REGISTER_GRAVITY_SENSOR(sc7a20h)
+REGISTER_GRAVITY_SENSOR(sc7a20h){
 .gsensor_ops = &sc7a20h_ops,
 };
 

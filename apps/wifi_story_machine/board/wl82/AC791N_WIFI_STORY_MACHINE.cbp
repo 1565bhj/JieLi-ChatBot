@@ -283,7 +283,6 @@
 					<Add option="../../../../cpu/wl82/liba/sxy_qyai.a" />
 					<Add option="../../../../cpu/wl82/liba/libArcLib.a" />
 					<Add option="../../../../cpu/wl82/liba/lib_lvgl_v8.a" />
-					<Add option="../../../../cpu/wl82/liba/lib_mqtt.a" />
 					<Add option="--end-group" />
 					<Add option="../../../../cpu/wl82/liba/video_dec_server.a" />
 					<Add option="../../../../cpu/wl82/liba/ui.a" />
@@ -1457,6 +1456,10 @@
 		<Unit filename="../../chatbot/qyai_mutilmodal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../chatbot/servo_pwm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../chatbot/servo_pwm.h" />
 		<Unit filename="../../chatbot/sys_instruct_word.c">
 			<Option compilerVar="CC" />
 		</Unit>

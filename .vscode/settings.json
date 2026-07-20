@@ -1,7 +1,7 @@
 {
     "makefile.makePath": "${workspaceFolder}\\tools\\utils\\make.exe",
-    "makefile.makefilePath": "${workspaceFolder}\\Makefile",
-    "makefile.makeDirectory": "${workspaceFolder}",
+    "makefile.makefilePath": "${workspaceFolder}\\apps\\wifi_story_machine\\board\\wl82\\Makefile",
+    "makefile.makeDirectory": "${workspaceFolder}\\apps\\wifi_story_machine\\board\\wl82",
     "makefile.configureOnOpen": false,
     "files.associations": {
         "*.S": "asm",

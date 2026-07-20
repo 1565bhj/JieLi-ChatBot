@@ -252,11 +252,11 @@
 
 //#define USE_LCD_TE_ROTATE_ENABLE            1 //开启TE使用时播放视频翻转视频数据
 
-#define CONFIG_LVGL_UI_ENABLE
-// #define CONFIG_UI_PLAY_EMOJI                        //开启眼睛表情显示
+//#define CONFIG_LVGL_UI_ENABLE
+#define CONFIG_UI_PLAY_EMOJI                        //开启眼睛表情显示
 
 #ifdef CONFIG_UI_PLAY_EMOJI
-//#define CONFIG_UI_TOW_EYE                           //开2个眼睛显示
+#define CONFIG_UI_TOW_EYE                           //开2个眼睛显示
 //#define CONFIG_UI_GIF_EYE                           //开启GIF眼睛显示
 #define CONFIG_UI_AVI_EYE                           //开启AVI眼睛显示
 #ifdef CONFIG_UI_TOW_EYE
@@ -269,8 +269,8 @@
 //#define TCFG_TOUCH_GST820_ENABLE            1 //触摸
 //#define TCFG_TOUCH_GST328_ENABLE            1 //触摸
 
-//#define CONFIG_GSENSOR_ENABLE               1 //加速度传感器
-//#define CONFIG_SC7A20H_GSENSOR_ENABLE       1   //SC7A20H加速度传感器
+#define CONFIG_GSENSOR_ENABLE               1 //加速度传感器
+#define CONFIG_SC7A20H_GSENSOR_ENABLE       1   //SC7A20H加速度传感器
 
 // 宏定义是否使能LVGL游戏
 //#define CONFIG_LVGL_GAMES_ENABLE            1
@@ -317,7 +317,8 @@
 #define SPEECH_ENERGY_MIN                   (128)   //语音检测最小值能量值
 #define DIGITAL_VOL_AGC                     0      //AEC后的音频数字增益
 
-#define TCFG_DEBUG_PORT                     IO_PORTA_10 //打印调试IO
+// #define TCFG_DEBUG_PORT                     IO_PORTA_10 //打印调试IO
+#define TCFG_DEBUG_PORT                     IO_PORTC_05 //打印调试IO
 #define TCFG_VCC33_CTRL_PORT                IO_PORTB_04 //3.3V电原控制IO
 #define TCFG_IOVDD_CTRL_PORT                IO_PORTB_03 //VDDIO电原控制IO
 
@@ -340,7 +341,12 @@
 
 #define TCFG_CHARING_STATUS_PORT            IO_PORTC_06 //TYPE-C插入电池充电检测IO
 #define TCFG_CHARGFULL_STATUS_PORT          IO_PORT_PR_00 //充满检测IO
-#define TCFG_LCD_BL_PWM_PORT                IO_PORTB_05  //LCD背光灯的PWM IO
+// #define TCFG_LCD_BL_PWM_PORT                IO_PORTB_05  //LCD背光灯的PWM IO
+#define TCFG_LCD_BL_PWM_PORT                IO_PORTC_04  //LCD背光灯的PWM IO
+
+#define TCFG_SERVO_ENABLE   //使能舵机
+#define SERVO_PWM_PORT IO_PORTC_08
+#define SERVO_PWM_CH PWMCH2_L
 
 //#define TCFG_VBAT_CHECK_EN                  1           //使能电量检测
 //#define TCFG_VBAT_CHECK_AD_PORT             IO_PORTA_10 //AD IO检测VBAT电池电量IO
@@ -372,7 +378,7 @@
 
 // #define TCFG_ADKEY_ENABLE                  0         //AD按键
 // #define TCFG_ADKEY_PORT                    IO_PORTB_01 //ADC按键IO
-#define TCFG_IOKEY_PORT                       IO_PORTH_04 //IO按键的IO
+#define TCFG_IOKEY_PORT                       IO_PORTB_01 //IO按键的IO
 #define TCFG_IOKEY_ENABLE                     1           //IO按键
 
 //#define TCFG_POWER_KEY_LONG_PRESS_VAD_EN    1           //使用按键长按触发VAD
@@ -392,7 +398,8 @@
 #define CONFIG_LTE_VENDOR                   (VENDOR_ML307R) //默认中移全网通cat1-ML307R模组
 #endif
 
-#define TCFG_DAC_MUTE_PORT                  IO_PORTH_05 //功放静音IO
+// #define TCFG_DAC_MUTE_PORT                  IO_PORTH_05 //功放静音IO
+#define TCFG_DAC_MUTE_PORT                  IO_PORTA_10 //功放静音IO
 #define TCFG_DAC_MUTE_VALUE                 0           //功放静音IO电平值
 #define TCFG_DAC_AUTO_MUTE_ENABLE           0
 
@@ -400,7 +407,7 @@
 #define TCFG_DAC_HW_CHANNEL_BIT             BIT(0)|BIT(1)|BIT(2)|BIT(3)   //BIT(0):DACFL、 BIT(1):DACFR、 BIT(2):DACRL、 BIT(3):DACRR
 #define TCFG_DAC_SOFT_CHANNEL_NUM           2                               //差分两个通道
 
-#define TCFG_SD0_ENABLE                     1           //使能SD卡
+#define TCFG_SD0_ENABLE                     0           //使能SD卡
 #define TCFG_SD_PORTS                       'B'         //SD0/SD1的ABCD组(默认为开发板SD0-D),注意:IO占用问题
 #define TCFG_SD_DAT_WIDTH                   1           //1:单线模式, 4:四线模式
 #define TCFG_SD_DET_MODE                    SD_CMD_DECT //检测模式:命令检测，时钟检测，IO检测
@@ -517,8 +524,10 @@
 #define TCFG_SW_IIC_CLK_PORT                IO_PORTA_00
 #define TCFG_SW_IIC_DAT_PORT                IO_PORTH_02
 
-#define TCFG_SW_IIC1_CLK_PORT                IO_PORTC_00
-#define TCFG_SW_IIC1_DAT_PORT                IO_PORTC_02
+// #define TCFG_SW_IIC1_CLK_PORT                IO_PORTC_00
+// #define TCFG_SW_IIC1_DAT_PORT                IO_PORTC_02
+#define TCFG_SW_IIC1_CLK_PORT                IO_PORTA_09
+#define TCFG_SW_IIC1_DAT_PORT                IO_PORTA_08
 
 //*********************************************************************************//
 //                            AUDIO_ADC应用的通道配置                              //

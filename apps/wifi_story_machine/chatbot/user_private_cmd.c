@@ -166,6 +166,8 @@ int aisp_wake_callback(int status)
     case 0: //小飞小飞 ,返回0-继续对话，返回非0则需要重新唤醒
         break;
     case 1: //打开灯光
+        // mp3_buf_play_res_file("OpenLED.mp3");
+        // return 1;//返回1立刻结束对话，返回0则走大模型对话
         break;
     case 2: //切换灯光
         break;
@@ -323,6 +325,10 @@ int net_ai_asr_txt_recv_callback(char *buf, int len)
     if (!strcmp("模式切换", buf)) { //"模式切换"用户自定义私有命令检测
         return 1;//返回1立刻结束对话，返回0则走大模型对话
     }
+    // if(!strcmp("开灯", buf)) {
+    //     mp3_buf_play_res_file("OpenLED.mp3");
+    //     return 1;//返回1立刻结束对话，返回0则走大模型对话
+    // }
     return 0;
 }
 
